@@ -22,6 +22,7 @@
         }
         h3{
             color: black;
+            padding-left: 10px;
         }
         .box{
             width: 250px;
@@ -42,8 +43,8 @@
 <body>
     <div>
     <h1>login</h1><br>
-    <h3>&nbsp&nbspUserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3>
-    <h3>&nbsp&nbspPassword :&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp Password...."></h3>
+    <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3>
+    <h3>Password :&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp Password...."></h3>
     <button type="submit">login</button>
     </div>
 </body>
