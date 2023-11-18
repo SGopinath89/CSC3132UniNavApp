@@ -38,6 +38,10 @@
             padding-left: 20px;
             padding-right: 20px;
         }
+        p{
+            text-align: center;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +49,9 @@
     <h1>login</h1><br>
     <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3>
     <h3>Password :&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp Password...."></h3>
+    <p>
+        <a href="Forgotpd.html">Forgot password</a>
+    </p>
     <button type="submit">login</button>
     </div>
 </body>
