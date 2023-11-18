@@ -53,6 +53,9 @@
         <a href="Forgotpd.html">Forgot password</a>
     </p>
     <button type="submit">login</button>
+    <p>
+        <a href="changepd.html">Change password</a>
+    </p>
     <p>Don't have an account?
         <a href="reg1">Sinup</a>
     </p>
