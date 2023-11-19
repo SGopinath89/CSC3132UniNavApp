@@ -46,7 +46,7 @@
             background-size: 100% 100%;
             background-size: cover;
         }
-}
+    
     </style>
 </head>
 <body>
