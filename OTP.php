@@ -8,7 +8,6 @@
 <body>
 <div>
 <h3>Email :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   email..."></h3>
-<button type="submit" id="item13" class="bt">&nbsp&nbsp&nbspOTP&nbsp&nbsp&nbsp</button><br><br>
 <h3>OTP :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   OTP..."></h3>
 </div>
 </body>
