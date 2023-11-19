@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loginpage</title>
-    <style type="text/css">
-            div{
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>forgotpdpage</title>
+	<style type="text/css">
+        div{
             position: absolute;
             top: 55%;
             left: 50%;
@@ -13,17 +13,15 @@
             border-style: solid;
             border-color: black;
             width: 400px;
-            height: 500px;
+            height: 300px;
             border-radius: 25px;
             background-color: rgba(2,0,0,0.5);
-        }
-        h1{
-            text-align: center;
-            color: white;
+
         }
         h3{
             color: white;
             padding-left: 10px;
+            margin-right: 0;
         }
         .box{
             width: 250px;
@@ -35,13 +33,10 @@
             width: 150pxpx;
             height: 35px;
             border-radius: 20px;
-            margin-left: 45%;
+            margin-left: 42%;
             padding-left: 20px;
             padding-right: 20px;
-        }
-        p{
-            text-align: center;
-            color: white;
+            background-color: lightblue;
         }
         body
         {
@@ -51,23 +46,16 @@
             background-size: 100% 100%;
             background-size: cover;
         }
+
     </style>
 </head>
 <body>
-    <div>
-    <h1>login</h1><br>
-    <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3>
-    <h3>Password :&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp Password...."></h3>
-    <p>
-        <a href="Forgotpd.html">Forgot password</a>
-    </p>
-    <button type="submit">login</button>
-    <p>
-        <a href="changepd.html">Change password</a>
-    </p>
-    <p>Don't have an account?
-        <a href="reg1">Sinup</a>
-    </p>
+<div >
+           <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3> 
+           <h3>Email :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   email..."></h3>
+    
+    <button type="submit">confirm</button>     
     </div>
+
 </body>
 </html>
