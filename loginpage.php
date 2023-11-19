@@ -15,13 +15,14 @@
             width: 400px;
             height: 500px;
             border-radius: 25px;
+            background-color: rgba(2,0,0,0.5);
         }
         h1{
             text-align: center;
-            color: black;
+            color: white;
         }
         h3{
-            color: black;
+            color: white;
             padding-left: 10px;
         }
         .box{
@@ -40,7 +41,12 @@
         }
         p{
             text-align: center;
-            color: black;
+            color: white;
+        }
+        body
+        {
+            background-image: url("123.jpg");
+            background-size: cover;
         }
     </style>
 </head>
