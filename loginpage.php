@@ -66,7 +66,7 @@
         <a href="OTP.php">Change password</a>
     </p>
     <p>Don't have an account?
-        <a href="loginpage.php">Sinup</a>
+        <a href="signinpage.php">Sinup</a>
     </p>
     </div>
 </body>
