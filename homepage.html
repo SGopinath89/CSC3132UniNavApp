@@ -19,29 +19,46 @@
 		a:active{
 			color:blue;
 		}
+        .absolute{
+			position: absolute;
+			padding: 30px;
+			top: 10vw;
+			right: 10px;	
+		}
+        
+		.sticky{
+			position: sticky;
+			background:rgb(23, 45, 23);
+			color:black;
+			padding: 20px;
+			top: 200px;
+			left: 123x;
+			
+		}
         
     </style>
 </head>
 <body>
-    <div style="background-color:pink;">
+    <div style="background-color:rgba(105, 194, 45, 0.748);">
         <img src="uovlogoname.png" width="50%" >
-           
+           <div class="absolute">
             <a href="loginpage.php" 
                 style=" color: white;   
-                        padding-left: 3%; 
                         font-size: 90%; 
                         text-decoration: none;
-                        text-align: right;">Admin login
+                        font-size:1vw;
+                        background-color:gray;"><b>Admin login</b>
             </a>
+            </div>
             
     </div>
     <div style="background-color: yellow;height: 8px;">	
     </div>
-    <div style="background-color: purple;height: 100px;">
+    <div style="background-color: purple;height:1vw;">
         </div>
     
-    <div>
-        <img src="uovmap.jpg" width="50%">
+    <div class="sticky">
+        <img src="uovmap.jpg" width=100%>
     </div>
 
 </body>;
