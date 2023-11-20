@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loginpage</title>
     <style type="text/css">
-            div{
+           .div1{
             position: absolute;
-            top: 55%;
+            top: 75%;
             left: 50%;
             transform: translate(-50%, -50%);
             border-style: solid;
             border-color: black;
-            width: 400px;
-            height: 500px;
+            width: 40%;
+            height: 60%;
             border-radius: 25px;
-            background-color: rgba(2,0,0,0.5);
+            background-color: rgba(10,10,10,0.7);
         }
         h1{
             text-align: center;
@@ -51,6 +51,8 @@
             background-size: 100% 100%;
             background-size: cover;
         }
+
+       
         a{
             color: yellow;
             text-decoration: none;
@@ -61,10 +63,52 @@
         a:hover{
             color: lightblue;
         }
+        .images
+        {
+            background-image: url('uovmap.jpg');
+			height: 170px;
+			background-repeat: no-repeat;
+			width: 170px;
+			background-size: cover;
+        }
+       
+        .absolute{
+			position: absolute;
+			padding: 30px;
+			top: 1px;
+			right: 1px;	
+		}
+        
+		.sticky{
+			position: sticky;
+			background:rgb(23, 45, 23);
+			color:black;
+			padding: 20px;
+			top: 200px;
+			left: 123x;
+			
+		}
     </style>
 </head>
 <body>
-    <div>
+<div style="background-color:rgba(203, 219, 192, 0.748);">
+        
+        <div style="margin-left: 92%;">
+        
+         </a>
+         </div>
+         <img src="uovlogoname.png" width="50%" >
+         
+ </div>
+ <div style="background-color: rgb(63, 179, 0);height: 8px;">	
+ </div>
+ <div style="background-color: rgb(32, 96, 32);height: 40px;">
+    
+ </div>
+ 
+ <div>
+    <img src="uovmap.jpg" width="100%">
+    <div class="div1">
     <h1>login</h1><br>
     <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3>
     <h3>Password :&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp Password...."></h3>
@@ -76,8 +120,9 @@
         <a href="OTP.php">Change password</a>
     </p>
     <p>Don't have an account?
-        <a href="signinpage.php">Sinup</a>
+        <a href="signinpage.php">Signin</a>
     </p>
     </div>
+</div>
 </body>
 </html>
