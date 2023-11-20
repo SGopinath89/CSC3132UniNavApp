@@ -1,3 +1,30 @@
+<?php
+   session_start();
+   include("Signinpage.php");
+
+   if($_SERVER['REQUEST_METHOD'] == "POST")
+   {
+$User_Name = $_POST['Uname'];
+$ID_No = $_POST['ID'];
+$Email = $_POST['email'];
+$Create_Password = $_POST['createpwd'];
+$Confim_Password = $_POST['confirmpwd'];
+
+    if(!empty($Email) && !empty($Create_Password) && !is_numeric($Email))
+    {
+            $query = "insert into admin(Uname,ID,email,createpwd,confirmpwd) values('$User_Name','$ID_No','$Email','$Create_Password','$Confim_Password')";
+
+            mysqli_query($con,$query);
+
+            echo "<script type='text/javascript'> alert('Successfully Register')</script>";
+
+    }
+    else{
+        echo "<script type='text/javascript'> alert('Please Enter some Valid')</script>";
+    }
+   }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,14 +87,15 @@
 </head>
 <body>
 <div >
+    <form method="POST">
            <h1>Signin</h1><br>
-           <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3>
-           <h3>ID-No :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   ID-Number..."></h3>
-           <h3>Email :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   email..."></h3>
-           <h3>Create Password :&nbsp&nbsp&nbsp&nbsp<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...."></h3>
-           <h3>Confirm Password :<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...."></h3>
+           <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..." name="Uname"></h3>
+           <h3>ID-No :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   ID-Number..." name="ID"></h3>
+           <h3>Email :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   email..." name="email"></h3>
+           <h3>Create Password :&nbsp&nbsp&nbsp&nbsp<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...." name="createpwd"></h3>
+           <h3>Confirm Password :<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...." name="confirmpwd"></h3>
 
-    
+    </form>
     <button type="submit">signup</button>     
     </div>
 </body>
