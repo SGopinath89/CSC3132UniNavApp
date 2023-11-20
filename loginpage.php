@@ -51,6 +51,16 @@
             background-size: 100% 100%;
             background-size: cover;
         }
+        a{
+            color: yellow;
+            text-decoration: none;
+        }
+        a:active{
+            color: hotpink;
+        }
+        a:hover{
+            color: lightblue;
+        }
     </style>
 </head>
 <body>
