@@ -58,7 +58,7 @@
 <h3>Email :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   email..."></h3>
 <button type="submit" >OTP</button><br><br>
 <h3>OTP :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   OTP..."></h3>
-<button type="submit" ><a href="">confirm</a></button><br><br>
+<a href="createnewpd.php"><button type="submit" >confirm</button></a><br><br>
 </div>
 </body>
 </html>
