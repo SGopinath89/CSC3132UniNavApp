@@ -43,24 +43,16 @@
             text-align: center;
             color: white;
         }
-        body
-        {
-            background-image: url("123.jpg");
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            background-size: cover;
-        }
-
+        
        
         a{
             color: yellow;
             text-decoration: none;
         }
-        a:active{
+        a:hover{
             color: hotpink;
         }
-        a:hover{
+        a:active{
             color: lightblue;
         }
         .images
@@ -103,7 +95,12 @@
  <div style="background-color: rgb(63, 179, 0);height: 8px;">	
  </div>
  <div style="background-color: rgb(32, 96, 32);height: 40px;">
-    
+    <a href="homepage.html" style=" color: white;   
+                        font-size: 100%; 
+                        text-decoration: none;
+                        font-size:2.5vw;
+                        margin-left:2vw;"><b>HOME</b>
+    </a>
  </div>
  
  <div>
