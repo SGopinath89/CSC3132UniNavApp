@@ -59,14 +59,14 @@
     <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3>
     <h3>Password :&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp Password...."></h3>
     <p>
-        <a href="Forgotpd.html">Forgot password</a>
+        <a href="forgotpdpage.php">Forgot password</a>
     </p>
     <button type="submit">login</button>
     <p>
-        <a href="changepd.html">Change password</a>
+        <a href="OTP.php">Change password</a>
     </p>
     <p>Don't have an account?
-        <a href="reg1">Sinup</a>
+        <a href="loginpage.php">Sinup</a>
     </p>
     </div>
 </body>
