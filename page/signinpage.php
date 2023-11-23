@@ -60,16 +60,38 @@
 </head>
 <body>
 <div >
-    <form action="SignUpdatedatabase.php"method="post">
+    <?php
+    $filename = $_SERVER['PHP_SELF'];
+    ?>
+    <form method="post" action="<?php echo'$filename'; ?>">
            <h1>Signin</h1><br>
            <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..." name="Uname"></h3>
-           <h3>ID-No :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   ID-Number..." name="ID"></h3>
+           <h3>ID-No :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   ID-Number..." name="id"></h3>
            <h3>Email :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   email..." name="email"></h3>
            <h3>Create Password :&nbsp&nbsp&nbsp&nbsp<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...." name="createpwd"></h3>
            <h3>Confirm Password :<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...." name="confirmpwd"></h3>
 
     </form>
-    <input type="Submit" name="submit" value="signup" class="cent">     
+    <input type="submit" name="AddDetail" value="signin" class="cent">     
     </div>
+    <?php
+    require_once'database\savesql.php';
+    require_once'database\sqlconnect.php';
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $USERNAME = $_POST['Uname'];
+        $IDN = $_POST['id'];
+        $EMAIL = $_POST['email'];
+        $CR_PWD = $_POST['createpwd'];
+        $CO_PWD = $_POST['confirmpwd'];
+        if (empty($USERNAME)){
+            echo "Please povide the admin id !";
+        }
+        else{
+            $query = "INSERT INTO stu VALUES('$USERNAME','$IDN','$EMAIL','$CR_PWD','$CO_PWD,)";
+            ExecuteQuery($query,$connection,'new admin added');
+        }
+    }
+
+    ?>
 </body>
 </html>
