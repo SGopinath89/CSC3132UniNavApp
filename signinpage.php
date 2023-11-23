@@ -1,30 +1,3 @@
-<?php
-   session_start();
-   include("Signinpage.php");
-
-   if($_SERVER['REQUEST_METHOD'] == "POST")
-   {
-$User_Name = $_POST['Uname'];
-$ID_No = $_POST['ID'];
-$Email = $_POST['email'];
-$Create_Password = $_POST['createpwd'];
-$Confim_Password = $_POST['confirmpwd'];
-
-    if(!empty($Email) && !empty($Create_Password) && !is_numeric($Email))
-    {
-            $query = "insert into admin(Uname,ID,email,createpwd,confirmpwd) values('$User_Name','$ID_No','$Email','$Create_Password','$Confim_Password')";
-
-            mysqli_query($con,$query);
-
-            echo "<script type='text/javascript'> alert('Successfully Register')</script>";
-
-    }
-    else{
-        echo "<script type='text/javascript'> alert('Please Enter some Valid')</script>";
-    }
-   }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +37,7 @@ $Confim_Password = $_POST['confirmpwd'];
             height: 35px;
             border-radius: 20px;
         }
-        button{
+        .cent{
 
             width: 150pxpx;
             height: 35px;
@@ -87,7 +60,7 @@ $Confim_Password = $_POST['confirmpwd'];
 </head>
 <body>
 <div >
-    <form method="POST">
+    <form action="SignUpdatedatabase.php"method="post">
            <h1>Signin</h1><br>
            <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..." name="Uname"></h3>
            <h3>ID-No :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   ID-Number..." name="ID"></h3>
@@ -96,7 +69,7 @@ $Confim_Password = $_POST['confirmpwd'];
            <h3>Confirm Password :<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...." name="confirmpwd"></h3>
 
     </form>
-    <button type="submit">signup</button>     
+    <input type="Submit" name="submit" value="signup" class="cent">     
     </div>
 </body>
 </html>
