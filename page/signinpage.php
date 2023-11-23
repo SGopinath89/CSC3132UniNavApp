@@ -75,8 +75,8 @@
     <input type="submit" name="AddDetail" value="signin" class="cent">     
     </div>
     <?php
-    require_once'database\savesql.php';
-    require_once'database\sqlconnect.php';
+    require_once'connection/savesql.php';
+    require_once'connection/sqlconnect.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $USERNAME = $_POST['Uname'];
         $IDN = $_POST['id'];
