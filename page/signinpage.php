@@ -61,9 +61,9 @@
 <body>
 <div >
     <?php
-    $filename = $_SERVER['PHP_SELF']
+    $filename = $_SERVER['PHP_SELF'];
     ?>
-    <form method="post">
+    <form method="post" action="<?php echo'$filename'; ?>">
            <h1>Signin</h1><br>
            <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..." name="Uname"></h3>
            <h3>ID-No :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   ID-Number..." name="id"></h3>
@@ -72,23 +72,23 @@
            <h3>Confirm Password :<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...." name="confirmpwd"></h3>
 
     </form>
-    <input type="Submit" name="AddDetail" value="sinup" class="cent">     
+    <input type="submit" name="AddDetail" value="signin" class="cent">     
     </div>
     <?php
-    require_once'';
-    require_once'';
+    require_once'sqlconnect.php';
+    require_once'savesql.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $USERNAME = $_POST['Uname'];
         $IDN = $_POST['id'];
         $EMAIL = $_POST['email'];
-        $C_PWD = $_POST['createpwd'];
-        $COPWD = $_POST['confirmpwd'];
-        if (empty($IDN)){
-            echo "Please povide the student id !";
+        $CR_PWD = $_POST['createpwd'];
+        $CO_PWD = $_POST['confirmpwd'];
+        if (empty($USERNAME)){
+            echo "Please povide the admin id !";
         }
         else{
-            $query = "INSERT INTO USER VALUES('$USERNAME','$IDN','$EMAIL',$C_PWD,$COPWD)";
-            ExecuteQuery($query,$connection,'new user added');
+            $query = "INSERT INTO stu VALUES('$USERNAME','$IDN','$EMAIL','$CR_PWD','$CO_PWD,)";
+            ExecuteQuery($query,$connection,'new admin added');
         }
     }
 
