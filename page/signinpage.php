@@ -66,7 +66,7 @@
     <form method="post">
            <h1>Signin</h1><br>
            <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..." name="Uname"></h3>
-           <h3>ID-No :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   ID-Number..." name="ID"></h3>
+           <h3>ID-No :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   ID-Number..." name="id"></h3>
            <h3>Email :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   email..." name="email"></h3>
            <h3>Create Password :&nbsp&nbsp&nbsp&nbsp<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...." name="createpwd"></h3>
            <h3>Confirm Password :<input type="password" class="box2" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...." name="confirmpwd"></h3>
@@ -75,6 +75,23 @@
     <input type="Submit" name="AddDetail" value="sinup" class="cent">     
     </div>
     <?php
+    require_once'';
+    require_once'';
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $USERNAME = $_POST['Uname'];
+        $IDN = $_POST['id'];
+        $EMAIL = $_POST['email'];
+        $C_PWD = $_POST['createpwd'];
+        $COPWD = $_POST['confirmpwd'];
+        if (empty($IDN)){
+            echo "Please povide the student id !";
+        }
+        else{
+            $query = "INSERT INTO USER VALUES('$USERNAME','$IDN','$EMAIL',$C_PWD,$COPWD)";
+            ExecuteQuery($query,$connection,'new user added');
+        }
+    }
+
     ?>
 </body>
 </html>
