@@ -9,7 +9,7 @@
             position: absolute;
             width: 30px;
             height: 30px;
-            background-image: url('LocationIcon.png'); 
+            background-image: url('resource/LocationIcon.png'); 
             background-size: cover;
         }
         </style>
