@@ -8,14 +8,13 @@
         function openNewPage() {
             window.open('#.html', '_blank');
         }
-
-        document.addEventListener('click', openNewPage);
+      
     </script>
 </head>
 <body>
 
 
-<h1>Hello, Click anywhere to Open New Page!</h1>
 
+<img src="resource/uovmap.jpg" width="100%">
 </body>
 </html>
