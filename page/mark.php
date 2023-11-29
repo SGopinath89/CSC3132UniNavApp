@@ -38,6 +38,6 @@ window.addEventListener('beforeunload',function()
     </script>
 </head>
 <body>
-    <img src="resource/uovmap.jpg" width="100%"></img>
+    <img src="#" width="100%"></img>
 </body>
 </html>
