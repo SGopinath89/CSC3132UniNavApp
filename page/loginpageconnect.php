@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click to Open New Page</title>
-    <script>
-        function openNewPage() {
-            window.open('#.html', '_blank');
-        }
-      
-    </script>
-</head>
-<body>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db_name = "UOV";
+$conn = new mysqli($servername,$username,$password,$db_name);
+if($conn->connect_error){
+    die("connection failed".$conn->connect_error);
+}
+echo "";
 
-
-
-<img src="resource/uovmap.jpg" width="100%">
-</body>
-</html>
+?>
