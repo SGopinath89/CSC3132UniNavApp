@@ -1,3 +1,6 @@
+<?php
+include("loginpageconnect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,19 +107,20 @@
  </div>
  
  <div>
+    <form action="loginnext.php" method="POST">
     <img src="resource/uovmap.jpg" width="100%">
     <div class="div1">
     <h1>login</h1><br>
-    <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3>
-    <h3>Password :&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp Password...."></h3>
+    <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..." id="user" name="user"></h3>
+    <h3>Password :&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp Password...." id="pass" name="pass" ></h3>
     <p>
         <a href="OTP.php">Forgot password</a>
     </p>
-    <button type="submit">login</button>
+    <button type="submit" value="login" name="submit">login</button>
     <p>Don't have an account?
         <a href="signinpage.php">Signin</a>
     </p>
-    </div>
+    </div></form>
 </div>
 </body>
 </html>
