@@ -20,8 +20,8 @@
     
     var icon = document.createElement("div");
     icon.className = 'icon';
-    var x = e.clientX-15;
-    var y = e.clientY-30;
+    var x = e.clientX-14;
+    var y = e.clientY-26;
     icon.style.left = x + "px";
     icon.style.top = y + "px"; 
     document.body.appendChild(icon);
