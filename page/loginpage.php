@@ -110,14 +110,11 @@
     <h3>UserName :<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   UserName..."></h3>
     <h3>Password :&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp Password...."></h3>
     <p>
-        <a href="page/forgotpdpage.php">Forgot password</a>
+        <a href="OTP.php">Forgot password</a>
     </p>
     <button type="submit">login</button>
-    <p>
-        <a href="page/OTP.php">Change password</a>
-    </p>
     <p>Don't have an account?
-        <a href="page/signinpage.php">Signin</a>
+        <a href="signinpage.php">Signin</a>
     </p>
     </div>
 </div>
