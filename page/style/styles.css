@@ -10,4 +10,36 @@ header {
     left: 0;
     width: 0;
     z-index: 100;
+} 
+.images
+{
+    background-image: url('uovmap.jpg');
+    height: 170px;
+    background-repeat: no-repeat;
+    width: 170px;
+    background-size: cover;
+}
+a:hover{
+    color:rgb(195, 248, 72);
+    
+}
+a{
+    color:white;
+    text-decoration: none;
+}
+.absolute{
+    position: absolute;
+    padding: 30px;
+    top: 1px;
+    right: 1px;	
+}
+
+.sticky{
+    position: sticky;
+    background:rgb(23, 45, 23);
+    color:black;
+    padding: 20px;
+    top: 200px;
+    left: 123x;
+    
 }
