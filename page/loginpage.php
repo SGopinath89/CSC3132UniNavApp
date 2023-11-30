@@ -1,6 +1,3 @@
-<?php
-include("loginpageconnect.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +104,7 @@ include("loginpageconnect.php");
  </div>
  
  <div>
-    <form action="loginnext.php" method="POST">
+    <form action="#.php" method="POST">
     <img src="resource/uovmap.jpg" width="100%">
     <div class="div1">
     <h1>login</h1><br>
@@ -121,6 +118,48 @@ include("loginpageconnect.php");
         <a href="signinpage.php">Signin</a>
     </p>
     </div></form>
+    <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $input_username = $_POST['user'];
+    $input_password = $_POST['pass'];
+
+    // Database connection details
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "UOV";
+
+    
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+   
+    $sql = "SELECT * FROM Admindetails WHERE Uname = ? AND createpwd = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $input_username, $input_password);
+
+
+    $stmt->execute();
+
+    
+    $result = $stmt->get_result();
+
+    
+    if ($result->num_rows > 0) {
+        header("Location:editingpage.php");
+        exit();
+    } else {
+        echo "Login failed. Incorrect username or password.";
+    }
+
+    
+    $stmt->close();
+    $conn->close();
+}
+?>
 </div>
 </body>
 </html>
