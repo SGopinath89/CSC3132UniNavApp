@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loginpage</title>
+    <link rel="stylesheet" href="style/styles.css">
     <style type="text/css">
            .div1{
             position: absolute;
@@ -43,18 +44,6 @@
             text-align: center;
             color: white;
         }
-        
-       
-        a{
-            color: yellow;
-            text-decoration: none;
-        }
-        a:hover{
-            color: hotpink;
-        }
-        a:active{
-            color: lightblue;
-        }
         .images
         {
             background-image: url('uovmap.jpg');
@@ -83,6 +72,8 @@
     </style>
 </head>
 <body>
+<?php include "./header/header.php"?>
+<!--
 <div style="background-color:rgba(203, 219, 192, 0.748);">
         
         <div style="margin-left: 92%;">
@@ -102,7 +93,7 @@
                         margin-left:2vw;"><b>HOME</b>
     </a>
  </div>
- 
+    -->
  <div>
     <form action="#.php" method="POST">
     <img src="resource/uovmap.jpg" width="100%">
