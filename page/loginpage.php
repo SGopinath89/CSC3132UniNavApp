@@ -72,7 +72,7 @@
     </style>
 </head>
 <body>
-<?php include "./header/header.php"?>
+<?php include "header/header.php"?>
 <!--
 <div style="background-color:rgba(203, 219, 192, 0.748);">
         
