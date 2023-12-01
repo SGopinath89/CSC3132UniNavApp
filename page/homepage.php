@@ -4,12 +4,15 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
-    <link rel="stylesheet" href="page/style/styles.css">
+    <link rel="stylesheet" href="style/styles.css">
     <style type="text/css">
         
     </style>
 </head>
 <body>
+    
+    <?php include "header/header.php"?>
+    <!--
     <div style="background-color:rgba(203, 219, 192, 0.748);">
             <img src="page/resource/uovlogoname.png" width="50%">       
     </div>
@@ -27,10 +30,10 @@
             </tr>
         </table>
     </div>
-    
+-->
     <div class="sticky">
-        <img src="page/resource/uovmap.jpg" style="width: 100%; height: auto;">
+        <img src="resource/uovmap.jpg" style="width: 100%; height: auto;">
     </div>
-
+   
 </body>
 </html>

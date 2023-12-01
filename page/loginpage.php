@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loginpage</title>
+    <link rel="stylesheet" href="style/styles.css">
     <style type="text/css">
 		div{
 			height: 300px;
@@ -50,12 +51,76 @@
         text-align: center;
        }
 
+<<<<<<< HEAD
 
 	</style>
 </head>
 <body>
 
  
+=======
+            width: 150pxpx;
+            height: 35px;
+            border-radius: 20px;
+            margin-left: 45%;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        p{
+            text-align: center;
+            color: white;
+        }
+        .images
+        {
+            background-image: url('uovmap.jpg');
+			height: 170px;
+			background-repeat: no-repeat;
+			width: 170px;
+			background-size: cover;
+        }
+       
+        .absolute{
+			position: absolute;
+			padding: 30px;
+			top: 1px;
+			right: 1px;	
+		}
+        
+		.sticky{
+			position: sticky;
+			background:rgb(23, 45, 23);
+			color:black;
+			padding: 20px;
+			top: 200px;
+			left: 123x;
+			
+		}
+    </style>
+</head>
+<body>
+<?php include "header/header.php"?>
+<!--
+<div style="background-color:rgba(203, 219, 192, 0.748);">
+        
+        <div style="margin-left: 92%;">
+        
+         </a>
+         </div>
+         <img src="resource/uovlogoname.png" width="50%" >
+         
+ </div>
+ <div style="background-color: rgb(63, 179, 0);height: 8px;">	
+ </div>
+ <div style="background-color: rgb(32, 96, 32);height: 40px;">
+    <a href="page/homepage.html" style=" color: white;   
+                        font-size: 100%; 
+                        text-decoration: none;
+                        font-size:2.5vw;
+                        margin-left:2vw;"><b>HOME</b>
+    </a>
+ </div>
+    -->
+>>>>>>> f8a04a706fb45b6a8158832bfffdd14564c107ff
  <div>
  <form method="POST">
  	<table>
