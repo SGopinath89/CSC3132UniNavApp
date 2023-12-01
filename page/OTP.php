@@ -5,60 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTP page</title>
     <style type="text/css">
-        div{
-            position: absolute;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-style: solid;
-            border-color: black;
-            width: 400px;
-            height: 300px;
-            border-radius: 25px;
-            background-color: rgba(2,0,0,0.5);
+		div{
+			height: 250px;
+			width: 350px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-style: solid;
+			border-radius: 20px;
+			background-color: rgba(2,0,0,0.2);
 
-        }
-        h3{
-            color: white;
-            padding-left: 10px;
-            margin-right: 0;
-        }
-        .box{
-            width: 250px;
-            height: 35px;
-            border-radius: 20px;
-        }
-        button{
+		}
+		td{
+			padding-bottom: 15px;
+			font-size: 20px;
+		}
+		input{
+			border-radius: 9px;
+			height: 20px;
+		}
+		.cent{
+			height: 30px;
+			position: fixed;
+			left: 40%;
+			right: 40%;
 
-            width: 150pxpx;
-            height: 35px;
-            border-radius: 20px;
-            margin-left: 42%;
-            padding-left: 20px;
-            padding-right: 20px;
-            background-color: lightblue;
-        }
-        body
-        {
-            background-image: url("123.jpg");
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            background-size: cover;
-        }
-        a{
-        
-            text-decoration: none;
-        }
+		}
 
-    </style>
+
+	</style>
 </head>
 <body>
 <div>
-<h3>Email :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   email..."></h3>
-<button type="submit" >OTP</button><br><br>
-<h3>OTP :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" class  ="box"  placeholder="&nbsp &nbsp  &nbsp  &nbsp   OTP..."></h3>
-<a href="createnewpd.php"><button type="submit" >confirm</button></a><br><br>
+ <form method="POST">
+ 	<table>
+ 		<tr><h1> </h1></tr>
+	<tr>
+		<td><b>Email:</b></td>
+		<td><input type="text" name="email"></td>
+	</tr>
+	<tr>
+	  <td >
+		<input type="submit" name="Adddetail" value="OTP" class="cent" ><br>
+	  </td>
+	</tr>
+	<tr>
+		<td><b>Otp:</b></td>
+		<td><input type="text" name="otp"></td>
+	</tr>	
+	
+	<tr>
+	  <td >
+		<input type="submit" name="Adddetail" value="submit" class="cent" ><br>
+	  </td>
+	</tr>
+	
+</table>
+</form>
 </div>
 </body>
 </html>

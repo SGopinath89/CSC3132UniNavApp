@@ -5,7 +5,7 @@ define('PWD','');
 define('DB','UOV');
 $connection = mysqli_connect(HOST,USERNAME,PWD,DB);
 if($connection){
-    echo "Database connected";
+    echo "";
 }
 else{
     die("connection.error".mysqli_connect_error());

@@ -5,57 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>newpdpage</title>
     <style type="text/css">
-        div{
-            position: absolute;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-style: solid;
-            border-color: black;
-            width: 400px;
-            height: 300px;
-            border-radius: 25px;
-            background-color: rgba(2,0,0,0.5);
+		div{
+			height: 200px;
+			width: 380px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-style: solid;
+			border-radius: 20px;
+			background-color: rgba(2,0,0,0.2);
 
-        }
-        h3{
-            color: white;
-            padding-left: 10px;
-            margin-right: 0;
-        }
-        .box{
-            width: 180px;
-            height: 35px;
-            border-radius: 20px;
-        }
-        button{
+		}
+		td{
+			padding-bottom: 15px;
+			font-size: 20px;
+		}
+		input{
+			border-radius: 9px;
+			height: 20px;
+		}
+		.cent{
+			height: 30px;
+			position: fixed;
+			left: 40%;
+			right: 40%;
 
-            width: 150pxpx;
-            height: 35px;
-            border-radius: 20px;
-            margin-left: 42%;
-            padding-left: 20px;
-            padding-right: 20px;
-            background-color: lightblue;
-        }
-        body
-        {
-            background-image: url("123.jpg");
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            background-size: cover;
-        }
-        
+		}
 
 
-    </style>
+	</style>
 </head>
 <body>
-<div >
-           <h3>Create Password :&nbsp&nbsp&nbsp&nbsp<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...."></h3>
-           <h3>Confirm Password :<input type="password" class="box" placeholder="  &nbsp &nbsp  &nbsp  &nbsp        Password...."></h3>
-           <button type="submit">confirm</button>     
-    </div>
+<div>
+ <form method="POST">
+ 	<table>
+ 	<tr><td> </td></tr>
+	<tr>
+		<td><b>Create Password:</b></td>
+		<td><input type="text" name="crpwd"></td>
+	</tr>
+	<tr>
+		<td><b>Confirm Password:</b></td>
+		<td><input type="text" name="cnpwd"></td>
+	</tr>
+	
+
+	<tr>
+		<td>
+		<input type="submit" name="Adddetail" value="confirm" class="cent" >
+	</td>
+	</tr>
+</table>
+</form>
+</div>
 </body>
 </html>
