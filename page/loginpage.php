@@ -6,7 +6,8 @@
     <title>Loginpage</title>
     <link rel="stylesheet" href="style/styles.css">
     <style type="text/css">
-		div{
+		.div1{
+            margin-top: 110px;
 			height: 300px;
 			width: 380px;
 			position: absolute;
@@ -46,19 +47,19 @@
 		}
         h1{
             text-align: center;
+            color: white;
         }
-       tr{
-        text-align: center;
-       }
+        h3{
+            color: white;
+            padding-left: 10px;
+        }
+        .box{
+            width: 250px;
+            height: 35px;
+            border-radius: 20px;
+        }
+        button{
 
-<<<<<<< HEAD
-
-	</style>
-</head>
-<body>
-
- 
-=======
             width: 150pxpx;
             height: 35px;
             border-radius: 20px;
@@ -69,6 +70,18 @@
         p{
             text-align: center;
             color: white;
+        }
+        
+       
+        a{
+            color: yellow;
+            text-decoration: none;
+        }
+        a:hover{
+            color: hotpink;
+        }
+        a:active{
+            color: lightblue;
         }
         .images
         {
@@ -98,8 +111,7 @@
     </style>
 </head>
 <body>
-<?php include "header/header.php"?>
-<!--
+    
 <div style="background-color:rgba(203, 219, 192, 0.748);">
         
         <div style="margin-left: 92%;">
@@ -119,9 +131,8 @@
                         margin-left:2vw;"><b>HOME</b>
     </a>
  </div>
-    -->
->>>>>>> f8a04a706fb45b6a8158832bfffdd14564c107ff
- <div>
+    
+ <div class="div1">
  <form method="POST">
  	<table>
  		<tr><h1>Login</h1></tr>
@@ -148,6 +159,7 @@
 </table>
 </form>
 </div>
+ 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_username = $_POST['Uname'];
