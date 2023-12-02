@@ -69,12 +69,12 @@
         }
         p{
             text-align: center;
-            color: white;
+            
         }
         
        
         a{
-            color: yellow;
+            color: blue;
             text-decoration: none;
         }
         a:hover{
@@ -133,6 +133,7 @@
  </div>
     
  <div class="div1">
+    <div>
  <form method="POST">
  	<table>
  		<tr><h1>Login</h1></tr>
@@ -194,7 +195,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location:editpage.php");
         exit();
     } else {
-        echo "Login failed. Incorrect username or password.";
+        echo "<p>Login failed. Incorrect username or password.</p>";
     }
 
     
@@ -202,6 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+</div>
 </div>
 </body>
 </html>

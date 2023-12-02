@@ -1,11 +1,11 @@
 <?php
-function ExecuteQuery($query,$connect)
+function ExecuteQuery($query,$connect,$msg)
 {
     $count=0;
     $result = mysqli_query($connect,$query);
     {
         if ($result) {
-            echo "done";
+            echo "$msg";
 
         }
         else{

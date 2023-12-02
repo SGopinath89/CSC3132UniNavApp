@@ -17,6 +17,10 @@
 			background-color: rgba(2,0,0,0.2);
 
 		}
+		p{
+            text-align: center;
+            
+        }
 		td{
 			padding-bottom: 15px;
 			font-size: 20px;
@@ -80,7 +84,7 @@
 	</tr>
 </table>
 </form>
-</div>
+
     <?php
     require_once'connection/savesql.php';
     require_once'connection/sqlconnect.php';
@@ -91,14 +95,15 @@
         $CR_PWD = $_POST['createpwd'];
         $CO_PWD = $_POST['confirmpwd'];
         if (empty($USERNAME)){
-            echo "Please povide the admin id !";
+            echo "<p>Please Enter your details !!!<p>";
         }
         else{
             $query = "INSERT INTO admindetails VALUES('$USERNAME','$IDN','$EMAIL','$CR_PWD','$CO_PWD')";
-            ExecuteQuery($query,$connection,'new admin added');
+            ExecuteQuery($query,$connection,'signin successful!!');
         }
     }
 
     ?>
+	 </div>
 </body>
 </html>
