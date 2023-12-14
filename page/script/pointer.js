@@ -21,3 +21,22 @@ locationTags.forEach((tag) => {
     popup.style.left = `${tag.offsetLeft}px`;
   });
 });
+//////adminpage update map popup
+const updateMapButton = document.getElementById('update-map-button');
+
+updateMapButton.addEventListener('click', () => {
+  const popup = document.createElement('div');
+  popup.classList.add('popup');
+  popup.innerHTML = `
+    <p>Do you want to add a place here?</p>
+    <button id="add-place-yes">Yes</button>
+    <button id="add-place-no">No</button>
+  `;
+
+  document.body.appendChild(popup);
+
+  const addPlaceYesButton = document.getElementById('add-place-yes');
+  addPlaceYesButton.addEventListener('click', () => {
+    // ... open another popup for adding location details
+  });
+});
