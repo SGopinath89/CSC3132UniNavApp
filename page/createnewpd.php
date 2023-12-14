@@ -37,6 +37,8 @@
 	</style>
 </head>
 <body>
+	<?php include "header/header.php"?>
+    <?php include "header/navpanel1.php"?>
 <div>
  <form method="POST">
  	<table>

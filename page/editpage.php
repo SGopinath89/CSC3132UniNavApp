@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    <?php include "header/header.php"?>
+    <?php include "header/navpanel1.php"?>
     <h1>login successful</h1>
 </body>
 </html>

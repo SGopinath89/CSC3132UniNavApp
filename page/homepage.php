@@ -12,6 +12,7 @@
 <body>
     
     <?php include "header/header.php"?>
+    <?php include "header/navpanel1.php"?>
     <!--
     <div style="background-color:rgba(203, 219, 192, 0.748);">
             <img src="page/resource/uovlogoname.png" width="50%">       
