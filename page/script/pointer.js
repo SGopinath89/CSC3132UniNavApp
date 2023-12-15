@@ -75,3 +75,23 @@ locationList.querySelectorAll('.edit-button').forEach((button) => {
       // ...
     });
   });
+
+  /////visitorpage hover event
+const locationTags = document.querySelectorAll('.location-tag');
+
+locationTags.forEach((tag) => {
+  tag.addEventListener('mouseover', () => {
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.innerHTML = tag.dataset.title;
+
+    document.body.appendChild(popup);
+
+    popup.style.top = `${tag.offsetTop + tag.offsetHeight}px`;
+    popup.style.left = `${tag.offsetLeft}px`;
+  });
+
+  tag.addEventListener('mouseout', () => {
+    document.body.removeChild(document.querySelector('.popup'));
+  });
+});
