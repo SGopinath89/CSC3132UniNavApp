@@ -51,3 +51,27 @@ addPlaceButton.addEventListener('click', () => {
   // Add new location to the list after successful submission
   // ...
 });
+
+locationList.querySelectorAll('.edit-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const locationId = button.parentElement.dataset.id;
+  
+      // Open popup for editing the location with details
+      // ...
+  
+      // Update location details in the list after successful submission
+      // ...
+    });
+  });
+  
+  locationList.querySelectorAll('.delete-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const locationId = button.parentElement.dataset.id;
+  
+      // Confirm deletion and send request to server
+      // ...
+  
+      // Remove location from the list after successful deletion
+      // ...
+    });
+  });
