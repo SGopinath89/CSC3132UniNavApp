@@ -40,3 +40,14 @@ updateMapButton.addEventListener('click', () => {
     // ... open another popup for adding location details
   });
 });
+///button function
+const addPlaceButton = document.getElementById('add-place-button');
+const locationList = document.getElementById('location-list');
+
+addPlaceButton.addEventListener('click', () => {
+  // Open popup for adding a new location
+  // ...
+
+  // Add new location to the list after successful submission
+  // ...
+});
