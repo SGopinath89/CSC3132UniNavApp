@@ -19,10 +19,7 @@
 			background-color: rgba(2,0,0,0.2);
 
 		}
-		td{
-			padding-bottom: 15px;
-			font-size: 20px;
-		}
+		
 		input{
 			border-radius: 9px;
 			height: 20px;
@@ -36,15 +33,8 @@
 			right: 40%;
 
 		}
-		a{
-			font-size: 15px;
-			text-decoration: none;
-            
-		}
-
-		p{
-			font-size: 15px;
-		}
+		
+		
         h1{
             text-align: center;
             color: white;
@@ -67,52 +57,14 @@
             padding-left: 20px;
             padding-right: 20px;
         }
-        p{
-            text-align: center;
-            
-        }
-        
-       
-        a{
-            color: blue;
-            text-decoration: none;
-        }
-        a:hover{
-            color: hotpink;
-        }
-        a:active{
-            color: lightblue;
-        }
-        .images
-        {
-            background-image: url('uovmap.jpg');
-			height: 170px;
-			background-repeat: no-repeat;
-			width: 170px;
-			background-size: cover;
-        }
-       
-        .absolute{
-			position: absolute;
-			padding: 30px;
-			top: 1px;
-			right: 1px;	
-		}
-        
-		.sticky{
-			position: sticky;
-			background:rgb(23, 45, 23);
-			color:black;
-			padding: 20px;
-			top: 200px;
-			left: 123x;
-			
-		}
+    
     </style>
 </head>
 <body>
-    
-<div style="background-color:rgba(203, 219, 192, 0.748);">
+<?php include "header/header.php"?> 
+<?php include "header/navpanel1.php"?> 
+<!--
+    <div style="background-color:rgba(203, 219, 192, 0.748);">
         
         <div style="margin-left: 92%;">
         
@@ -121,21 +73,13 @@
          <img src="resource/uovlogoname.png" width="50%" >
          
  </div>
- <div style="background-color: rgb(63, 179, 0);height: 8px;">	
- </div>
- <div style="background-color: rgb(32, 96, 32);height: 40px;">
-    <a href="page/homepage.html" style=" color: white;   
-                        font-size: 100%; 
-                        text-decoration: none;
-                        font-size:2.5vw;
-                        margin-left:2vw;"><b>HOME</b>
-    </a>
- </div>
+    -->
+
     
  <div class="div1">
     <div>
  <form method="POST">
- 	<table>
+ 	<table cellpadding="10vw">
  		<tr><h1>Login</h1></tr>
 	<tr>
 		<td><b>Username :</b></td>
@@ -147,7 +91,7 @@
 		<td><input type="text" name="createpwd"></td>
 	</tr>	
 	<tr>
-		<td>
+		<td></td><td>
         <a href="OTP.php">Forgot password</a>
         </td>
     </tr>

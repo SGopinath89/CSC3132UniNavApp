@@ -38,6 +38,8 @@ window.addEventListener('beforeunload',function()
     </script>
 </head>
 <body>
+    <?php include "header/header.php"?>
+    <?php include "header/navpanel1.php"?>
     <img src="#" width="100%"></img>
 </body>
 </html>

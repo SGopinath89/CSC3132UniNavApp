@@ -46,6 +46,9 @@
 	</style>
 </head>
 <body>
+
+	<?php include "header/header.php"?>
+    <?php include "header/navpanel1.php"?>
 <div >
     <?php
     $filename = $_SERVER['PHP_SELF'];

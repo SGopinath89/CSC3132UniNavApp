@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTP page</title>
+	
     <style type="text/css">
-		div{
+		.div1{
 			height: 250px;
 			width: 350px;
 			position: absolute;
@@ -37,7 +38,9 @@
 	</style>
 </head>
 <body>
-<div>
+	<?php include "header/header.php"?>
+    <?php include "header/navpanel1.php"?>
+<div class="div1">
  <form method="POST">
  	<table>
  		<tr><h1> </h1></tr>
