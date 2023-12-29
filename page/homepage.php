@@ -15,71 +15,29 @@
 
         }
         .frame {
-            display: none;
-            position: fixed;
-            top: 15%;
-            left: 15%;
-            transform: translate(-50%, -50%);
-            border: 2px solid #000;
-            background-color: white;
-            padding: 20px;
-            z-index: 999;
-        }
-        
-
-       
-        #div1{
       width: 200px;
       height: 200px;
       position: absolute;
       border-radius: 10px;
-      margin-top: 470px;
       margin-left: 135px;
       border: 2px solid #000;
       background-color: rgb(173, 225, 230);
       padding: 20px;
       z-index: 999;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      display: none;
         }
-        img{
-            margin-top: -10px;
-            height: 50px;
-            width: 60px;
-        }
-        #a{
+        #a2{
             height: 50px;
             width: 50px;
             margin-left: 125px;
             margin-top: 470px;
         }
-        h4{
-            text-align: right;
-            margin-top: 17px;
-        }
-        p{
-            margin-bottom: 0px;
-        }
-        .small{
-            text-align: justify;
-            margin-bottom: 0px;
-            margin-top: 0px;
-            font-weight: normal;
-
-        }
-        #A{
-            height: 30px;
-            width: 30px;
-            padding: 0px;
-        }
-        h2{
-            margin-top: -10px;
-            text-align: center;
-            text-decoration: underline;
-            text-decoration-color: grey;
-        }
-        a{
-            text-decoration: none;
-            color: black;
+        #a1{
+            height: 50px;
+            width: 50px;
+            margin-left: 200px;
+            margin-top: 200px;
         }
         
         .close{
@@ -89,6 +47,34 @@
             width: 25px;
             margin-top: -10px;
         }
+        img{
+            height: 50px;
+            width: 65px;
+            
+        }
+        #p{
+            position: absolute;
+        }
+        .siz{
+            position: absolute;
+            right: 1px;
+            height: 23px;
+            width: 25px;
+            margin-top: -21px;
+        }
+        h2{
+            margin-top: -10px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: grey;
+        }
+        b{
+            margin-bottom: 1px;
+        }
+        p{
+           margin-top: 5px;
+        }
+
     </style>
 </head>
 <body>
@@ -114,53 +100,79 @@
     </div>
 -->
     <div class="sticky" id="im">
-       
-    <img src="resource/pngegg.png" id="a" >
+    <?php
+require_once'connection.php';
+$query1="SELECT * FROM mar_img";
+$result1=mysqli_query($connection,$query1);
+$count=mysqli_num_rows($result1);
+for ($i = 1; $i <= 1; $i++) {
+    $query="SELECT * FROM mar_img WHERE id='$i'";
+    $result=mysqli_query($connection,$query);
+    foreach ($result as $key => $value) {
+        $m_l=$value['mar_left'];
+        $m_t=$value['mar_top'];
+        $loc=$value['img_loc'];
     
-    <div class="frame" id="div1">
-        <img src="resource/Close.png" id="b" class="close">
-
-        <h2>UOV entrance</h2>
-           <img src="112.jpg">
-           <img src="113.jpg">
-           <img src="114.jpg">
-              <p><b>descripation :<b></p>
-              <p class="small">&nbsp&nbspuniversity of vavuniya Copyright ownership gives the owner...</p>
-         <a href="index2.html"><h4>Learn more..</h4></a>
-           
-    </div>
-    
-    
-
-    
-
-
-    <script>
-{
-       function creatediv(a,b) 
-       {
-            const openButton = document.getElementById('a');
-            const closeButton = document.getElementById('b');
-                const frame = document.querySelector('.frame');
-
-                openButton.addEventListener('click', () => {
-                       frame.style.display = 'block';
-                });
-
-                closeButton.addEventListener('click', () => {
-                       frame.style.display = 'none';
-                });
-        }
-
-        
-            
-            creatediv(a, b);
-        
-        
+    echo "<img src='$loc.jpg' style='margin-left: {$m_l}px; margin-top: {$m_t}px; padding: 0px' id='a{$i}' id='p'>";
+   }
 }
+?>
 
-    </script>
-       
+
+<?php
+$query2="SELECT * FROM cre_div;";
+$result2=mysqli_query($connection,$query2);
+$count2=mysqli_num_rows($result2);
+for($j=1; $j<=$count2; $j++)
+{
+    $query3="SELECT * FROM cre_div WHERE id='$j'";
+    $result3=mysqli_query($connection,$query3);
+    foreach ($result3 as $key => $value)
+    {
+        $im_1=$value['img_1'];
+        $im_2=$value['img_2'];
+        $im_3=$value['img_3'];
+        $hed=$value['head'];
+        $ID=$value['id'];
+        $dis=$value['discreption'];
+   echo"<div class='sticky'>";
+        echo"<div class='frame' id='div{$j}'>";
+           echo"<img src='Close.png' id='c{$j}' class='siz'>";
+           echo"<h2>$hed</h2>";
+           echo"<img src='$im_1.jpg'>";
+           echo"<img src='$im_2.jpg'>";
+           echo"<img src='$im_3.jpg'>";
+           echo "<b>discreption:</b><br>";
+           echo"<p>$dis</p>";
+           
+        echo"</div>";
+   echo"</div>";
+    }
+ }
+?>
+
+    
+</div>
+<script>
+    function toggleFrame(openButtonId, frameId,close) {
+        const openButton = document.getElementById(openButtonId);
+        const closeButton = document.getElementById(close);
+        const frame = document.getElementById(frameId);
+
+        openButton.addEventListener('click', () => {
+            frame.style.display = 'block';
+        });
+
+        // Assuming you want to close the frame when clicking the image
+        closeButton.addEventListener('click', () => {
+            frame.style.display = 'none';
+        });
+    }
+
+    toggleFrame('a1', 'div1','c1');
+    toggleFrame('a2', 'div2','c2');
+    
+</script>
     </div>
    
 </body>
