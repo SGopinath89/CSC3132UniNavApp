@@ -43,4 +43,15 @@ function dupId($value,$conn)
     }
     }
 }
+function counttable($conn,$query)
+{
+	$coun = 0;
+	$result=mysqli_query($conn,$query);
+	if($result)
+	{
+		$count=mysqli_num_rows($result);
+	}
+	
+	return $count;
+}
 ?>
