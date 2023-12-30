@@ -132,7 +132,7 @@ if($_SERVER['REQUIEST_METHOD'] == 'POST')
 	$DIS=$_POST['description'];
 
 	$query="INSERT INTO cre_div VALUES('$ID','$HEAD','$B_IMG','$M_LEFT','$M_TOP','$IMG_1','$IMG_2','$IMG_3','$IMG_4','$IMG_5','$DIS')";
-	if($d1 && $e1 && $e2 && $e3 && $e4 && $e5 && $e6 && $e7 && $e8 && $e9 && $e10 && $e11)
+	if(!$d1 && !$e1 && !$e2 && !$e3 && !$e4 && !$e5 && !$e6 && !$e7 && !$e8 && !$e9 && !$e10 && !$e11)
 	{
 		updatetable($connection,$query);
 	}else{
