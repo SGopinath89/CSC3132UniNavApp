@@ -136,6 +136,7 @@ for($j=1; $j<=$count2; $j++)
         $hed=$value['head'];
         $ID=$value['id'];
         $dis=$value['discreption'];
+        $sorttext=substr($dis, 0, 100);
    echo"<div class='sticky'>";
         echo"<div class='frame' id='div{$j}'>";
            echo"<img src='Close.png' id='c{$j}' class='siz'>";
@@ -144,7 +145,8 @@ for($j=1; $j<=$count2; $j++)
            echo"<img src='$im_2.jpg'>";
            echo"<img src='$im_3.jpg'>";
            echo "<b>discreption:</b><br>";
-           echo"<p>$dis</p>";
+           echo"<p>$sorttext</p>";
+           echo "<a href='slied.php?val=" . urlencode($ID) . "'>view more</a>";
            
         echo"</div>";
    echo"</div>";
