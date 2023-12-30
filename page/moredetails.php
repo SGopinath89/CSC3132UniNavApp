@@ -131,17 +131,17 @@ echo"<div class='mySlides fade'>";
   echo"<div class='text'>Caption Three</div>";
 echo"</div>";
 
-echo"<div class='mySlides fade'>"
-  echo"<div class='numbertext'>4 / 5</div>"
-  echo"<img src='$im_4.jpg' style='width:100%''>"
-  echo"<div class='text'>Caption Three</div>"
-echo"</div>"
+echo"<div class='mySlides fade'>";
+  echo"<div class='numbertext'>4 / 5</div>";
+  echo"<img src='$im_4.jpg' style='width:100%''>";
+  echo"<div class='text'>Caption Three</div>";
+echo"</div>";
 
-echo"<div class='mySlides fade'>"
-  echo"<div class='numbertext'>5 / 5</div>"
-  echo"<img src='$im_5.jpg' style='width:100%''>"
-  echo"<div class='text'>Caption Three</div>"
-echo"</div>"
+echo"<div class='mySlides fade'>";
+  echo"<div class='numbertext'>5 / 5</div>";
+  echo"<img src='$im_5.jpg' style='width:100%''>";
+  echo"<div class='text'>Caption Three</div>";
+echo"</div>";
 echo"<a class='prev' onclick='plusSlides(-1)'>❮</a>";
 echo"<a class='next' onclick='plusSlides(1)'>❯</a>";
 
