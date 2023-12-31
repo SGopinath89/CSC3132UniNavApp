@@ -60,23 +60,34 @@
 	<tr>
 		<td><b>Username :</b></td>
 		<td><input type="text" name="Uname"></td>
+		<td><?php $e2=emptycheck('Uname','please provide the userNAME!!');
+		     ?></td>
 	</tr>
 	<tr>
 		<td><b>Id-No      :</b></td>
 		<td><input type="text" name="id"></td>
+		<td><?php $d1=duplicateId($value,$connection);
+		          $e1=emptycheck('Uname','please provide the user ID!!');
+		     ?></td>
 	</tr>
 	
 	<tr>
 		<td><b>Email    :</b></td>
 		<td><input type="text" name="email"></td>
+		<td><?php $e3=emptycheck('Uname','please provide the email!!');
+		     ?></td>
 	</tr>
 	<tr>
 		<td><b>Create Password:</b></td>
 		<td><input type="text" name="createpwd"></td>
+		<td><?php $e4=emptycheck('Uname','please provide the password!!');
+		     ?></td>
 	</tr>
 	<tr>
 		<td><b>Confirm Password:</b></td>
 		<td><input type="text" name="confirmpwd"></td>
+		<td><?php $e5=emptycheck('Uname','please provide the password!!');
+		     ?></td>
 	</tr>
 	
 
@@ -89,7 +100,7 @@
 </form>
 
     <?php
-    require_once'connection/savesql.php';
+    require_once'connection/function.php';
     require_once'connection/sqlconnect.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $USERNAME = $_POST['Uname'];
@@ -97,12 +108,9 @@
         $EMAIL = $_POST['email'];
         $CR_PWD = $_POST['createpwd'];
         $CO_PWD = $_POST['confirmpwd'];
-        if (empty($USERNAME)){
-            echo "<p>Please Enter your details !!!<p>";
-        }
-        else{
-            $query = "INSERT INTO admindetails VALUES('$USERNAME','$IDN','$EMAIL','$CR_PWD','$CO_PWD')";
-            ExecuteQuery($query,$connection,'signin successful!!');
+        if (!$d1 && !$e1 && !$e2 && !$e3 && !$e4 && !$e5){
+			    $query = "INSERT INTO admindetails VALUES('$USERNAME','$IDN','$EMAIL','$CR_PWD','$CO_PWD')";
+               ExecuteQuery($query,$connection,'signin successful!!');
         }
     }
 
