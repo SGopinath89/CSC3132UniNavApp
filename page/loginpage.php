@@ -84,12 +84,17 @@
 	<tr>
 		<td><b>Username :</b></td>
 		<td><input type="text" name="Uname"></td>
+        <td><?php $e1 = emptycheck('Uname','please provide the userNAME!!'); ?></td>
 	</tr>
 	
 	<tr>
 		<td><b>Password:</b></td>
 		<td><input type="text" name="createpwd"></td>
+        <td><?php $e2 = emptycheck('createpwd','please provide the password!!'); ?></td>
 	</tr>	
+    <tr>
+        <td><input type="checkbox" name="keplog">Remember Me</td>
+    </tr>
 	<tr>
 		<td></td><td>
         <a href="OTP.php">Forgot password</a>
@@ -106,45 +111,18 @@
 </div>
  
 <?php
+require_once'connection/sqlconnect.php';
+require_once'connection/function.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $input_username = $_POST['Uname'];
-    $input_password = $_POST['createpwd'];
-
-    // Database connection details
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "UOV";
-
-    
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    $input_username = trim($_POST['Uname']);
+    $input_password = trim($_POST['createpwd']);
+    $rememberme=(isset($_POST['keplog'])) ? true : false;
+    if(!$e1 && !$e2)
+    {
+        login($input_username,$input_password,$rememberme,$connection);
     }
-   
-    $sql = "SELECT * FROM Admindetails WHERE Uname = ? AND createpwd = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $input_username, $input_password);
-
-
-    $stmt->execute();
-
     
-    $result = $stmt->get_result();
-
-    
-    if ($result->num_rows > 0) {
-        header("Location:editpage.php");
-        exit();
-    } else {
-        echo "<p>Login failed. Incorrect username or password.</p>";
-    }
-
-    
-    $stmt->close();
-    $conn->close();
 }
 ?>
 </div>
