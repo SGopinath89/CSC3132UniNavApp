@@ -43,6 +43,23 @@ function dupId($value,$conn)
     }
     }
 }
+function duplicateId($value,$conn)
+{
+	if($_SERVER['REQUEST_METHOD'] == 'POST')
+	{
+		$query="SELECT * FROM student WHERE id='$_POST[$value]';";
+    $count=counttable($conn,$query);
+    if($count>0)
+    {
+    	echo "<p style='color:red '>$value this id already exists <p>";
+    	return true;
+    }
+    else
+    {
+    	return false;
+    }
+    }
+}
 function counttable($conn,$query)
 {
 	$coun = 0;
@@ -78,5 +95,17 @@ function login($name,$pwd,$keplog,$conn)
 	}
 
 
+}
+function ExecuteQuery($query,$connect,$msg)
+{
+    $count=0;
+    $result = mysqli_query($connect,$query); 
+        if ($result) {
+            echo "$msg";
+
+        }
+        else{
+            die("Error".mysqli_error($connect));
+        }
 }
 ?>
