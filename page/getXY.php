@@ -19,7 +19,14 @@
 function showCoords(event) {
   let x = event.clientX;
   let y = event.clientY;
-  let text = "X coords: " + x + ", Y coords: " + y;
+  var windowWidth = window.innerWidth;
+  var windowHeight = window.innerHeight;
+ 
+ var x_c=(x/windowWidth)*100;
+ var y_c=(y/windowHeight)*100;
+ var windowWidthInt = parseInt(x_c);
+ var windowHeightInt = parseInt(y_c);
+  let text = "X coords: " + windowWidthInt + ", Y coords: " + windowHeightInt;
   document.getElementById("demo").innerHTML = text;
 }
 </script>
