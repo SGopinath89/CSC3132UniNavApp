@@ -17,7 +17,7 @@ function emptycheck($value,$msg)
 	{
 	if(empty($_POST[$value]))
 	{
-		echo "<p>$msg</p>";
+		echo "<p style='color:red >$msg</p>";
 		return true;
 	}
 	else
@@ -53,5 +53,30 @@ function counttable($conn,$query)
 	}
 	
 	return $count;
+}
+function login($name,$pwd,$keplog,$conn)
+{
+	$query="SELECT * FROM logintb WHERE uname='$name'AND pwd='$pwd'";
+	$result=mysqli_query($conn,$query);
+	$count=mysqli_num_rows($result);
+	if($count == 1)
+	{
+		if($keplog)
+		{
+			setcookie('name',$name,time()+3600);
+			//setcookie('name',$name,time()-10);
+		}else{
+			session_start();
+			$_SESSION['name']=$name;
+		}
+		
+		header('Location:adddeleteloginlogout.php');
+	   
+}
+	else{
+		echo"loginfailed please check your username or password";
+	}
+
+
 }
 ?>
