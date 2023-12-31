@@ -147,8 +147,9 @@ for($j=1; $j<=$count2; $j++)
         });
     }
 
-    toggleFrame('a1', 'div1','c1');
-    toggleFrame('a2', 'div2','c2');
+    for (let i = 1; i <= <?php echo $count; ?>; i++) {
+           toggleFrame('a' + i, 'div' + i, 'c' + i);
+        }
     
 </script>
     </div>
