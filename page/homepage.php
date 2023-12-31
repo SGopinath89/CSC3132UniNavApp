@@ -113,8 +113,10 @@ for ($i = 1; $i <= 1; $i++) {
         $m_l=$value['mar_left'];
         $m_t=$value['mar_top'];
         $loc=$value['img_loc'];
+        $m_l1=$m_l-35;
+        $m_t1=$m_t-74;
     
-    echo "<img src='$loc.jpg' style='margin-left: {$m_l}px; margin-top: {$m_t}px; padding: 0px' id='a{$i}' id='p'>";
+    echo "<img src='$loc.jpg' style='margin-left: {$m_l1}px; margin-top: {$m_t1}px; padding: 0px' id='a{$i}' id='p'>";
    }
 }
 ?>
