@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signinpage</title>
+	<link rel="stylesheet" href="style/styles.css">
+
     <style type="text/css">
-		div{
+		#div{
 			height: 400px;
 			width: 380px;
 			position: absolute;
@@ -21,10 +23,6 @@
             text-align: center;
             
         }
-		td{
-			padding-bottom: 15px;
-			font-size: 20px;
-		}
 		input{
            
 			border-radius: 9px;
@@ -49,11 +47,11 @@
 
 	<?php include "header/header.php"?>
     <?php include "header/navpanel1.php"?>
-<div >
+<div>
     <?php
     $filename = $_SERVER['PHP_SELF'];
     ?>
-     <div>
+     <div id='div'>
  <form method="POST">
  	<table>
  		<tr><h1>Signin</h1></tr>
@@ -67,7 +65,7 @@
 		<td><b>Id-No      :</b></td>
 		<td><input type="text" name="id"></td>
 		<td><?php $d1=duplicateId($value,$connection);
-		          $e1=emptycheck('Uname','please provide the user ID!!');
+		         $e1=emptycheck('Uname','please provide the user ID!!');
 		     ?></td>
 	</tr>
 	

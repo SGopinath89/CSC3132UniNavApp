@@ -5,17 +5,32 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <link rel="stylesheet" href="style/styles.css">
+    <style type="text/css">
+      
+        #demo{
+          color:red;
+          font-size:30px;
+        }
+        #im{
+          height: 800px;
+          background-image: url('resource/uovmap.jpg');
+          background-position: center;
+          background-size: cover;
+          border: 15px solid black;
+        }
+    </style>
 </head>
-<body onclick="showCoords(event)" style="border:1px solid black;padding:4px">
-    
+<body >
+   
     <?php include "header/header.php"?>
     <?php include "header/navpanel1.php"?>
-    <div class="sticky" id="im">
-     
+  <div onclick="showCoords(event)" style="border:1px solid black;padding:4px">
+    <div class="sticky-" id='im'>
+    <p id="demo">Coordinates:</p>
     </div>
-    <img src="1.jpg">
-<p id="demo">Coordinates:</p>
-<script>
+    
+  </div>
+  <script>
 function showCoords(event) {
   let x = event.clientX;
   let y = event.clientY;

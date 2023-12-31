@@ -20,7 +20,7 @@
 
 		}
 		
-		input{
+		#inpt{
 			border-radius: 9px;
 			height: 20px;
             width: 200px;
@@ -83,26 +83,30 @@
  		<tr><h1>Login</h1></tr>
 	<tr>
 		<td><b>Username :</b></td>
-		<td><input type="text" name="Uname"></td>
-        <td><?php $e1 = emptycheck('Uname','please provide the userNAME!!'); ?></td>
+		<td><input type="text" name="Uname" id='inpt'></td>
+        <td><?php// $e1 = emptycheck('Uname','please provide the userNAME!!'); ?></td>
 	</tr>
 	
 	<tr>
 		<td><b>Password:</b></td>
-		<td><input type="text" name="createpwd"></td>
-        <td><?php $e2 = emptycheck('createpwd','please provide the password!!'); ?></td>
+		<td><input type="text" name="createpwd" id='inpt'></td>
+        <td><?php //$e2 = emptycheck('createpwd','please provide the password!!'); ?></td>
 	</tr>	
-    <tr>
-        <td><input type="checkbox" name="keplog">Remember Me</td>
+    <tr align='center'>
+        <td colspan=3><input type="checkbox" name="keplog">
+        <label for="keplog">Remember Me</label>
+        </td>
+       
     </tr>
-	<tr>
-		<td></td><td>
+	<tr align='center'>
+		
+        <td colspan=3>
         <a href="OTP.php">Forgot password</a>
         </td>
     </tr>
-	<tr>
-	  <td >
-		<input type="submit" name="Adddetail" value="login" class="cent" ><br>
+	<tr align='center'>
+	  <td colspan=3>
+		<input type="submit" name="Adddetail" value="login" class="cent" >
 	  </td>
 	</tr>
 	
