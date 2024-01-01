@@ -6,27 +6,42 @@
 	<title></title>
 	<link rel="stylesheet" href="style/styles.css">
 	<style type="text/css">
-		form{
-			height: 30px;
-			position: fixed;
-			left: 40%;
-			right: 40%;
+		.div1{
+            margin-top: 20%;
+			height: 165%;
+			width: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-style: solid;
+			border-radius: 20px;
+			background-color: rgba(2,0,0,0.2);
 
+		}
+		input{
+			border-radius: 7px;
+			margin-bottom: 3%;
+			margin-top: 3%;
 		}
 		#cent{
 			height: 30px;
-			position: fixed;
+		}
+		#size{
+			width: 90%;
+			height: 30px;
 		}
 	</style>
 </head>
 <body>
 	<?php include "header/header.php"?>
     <?php include "header/navpanel1.php"?>
-<form method="POST">
-	<table>
+	<div class="div1">
+<form method="POST" align="center">
+	<table align="center">
 		<tr>
 			<td>ID: </td>
-			<td><input type="number" value="ID..." name="id"></td>
+			<td><input type="number" value="ID..." name="id" id="size"></td>
 			<td><?php
 			          //$d1=dupId('id',$connection); 
 			          //$e1=emptycheck('id','please provide the  Id');
@@ -35,7 +50,7 @@
 		</tr>
 		<tr>
 			<td>NAME:</td>
-			<td><input type="text" value="building_name" name="head"></td>
+			<td><input type="text" value="building_name" name="head" id="size"></td>
 			<td><?php  
 			          //$e2=emptycheck('head','please provide the  head');
 
@@ -43,7 +58,7 @@
 		</tr>
 		<tr>
 			<td>BUILDING_img:</td>
-			<td><input type="text" value="building img.." name="b_img"></td>
+			<td><input type="text" value="building img.." name="b_img" id="size"></td>
 			<td><?php  
 			          //$e3=emptycheck('b_img','please provide the  b_img');
 
@@ -51,7 +66,7 @@
 		</tr>
 		<tr>
 			<td>MAR_left:</td>
-			<td><input type="text" value="X_co.." name="mar_l"></td>
+			<td><input type="text" value="X_co.." name="mar_l" id="size"></td>
 			<td><?php  
 			          //$e4=emptycheck('mar_l','please provide the mar_l');
 
@@ -59,7 +74,7 @@
 		</tr>
 		<tr>
 			<td>MAR_top:</td>
-			<td><input type="text" value="Y_co.." name="mar_t"></td>
+			<td><input type="text" value="Y_co.." name="mar_t" id="size"></td>
 			<td><?php  
 			          //$e5=emptycheck('mar_t','please provide the mar_t');
 
@@ -67,7 +82,7 @@
 		</tr>
 		<tr>
 			<td>IMAGE_1:</td>
-			<td><input type="text" value="img_1.." name="img_1"></td>
+			<td><input type="text" value="img_1.." name="img_1" id="size"></td>
 			<td><?php  
 			          //$e6=emptycheck('img_1','please provide the img_1');
 
@@ -75,7 +90,7 @@
 		</tr>
 		<tr>
 			<td>IMAGE_2:</td>
-			<td><input type="text" value="img_2.." name="img_2"></td>
+			<td><input type="text" value="img_2.." name="img_2" id="size"></td>
 			<td><?php  
 			          //$e7=emptycheck('img_2','please provide the img_2');
 
@@ -83,7 +98,7 @@
 		</tr>
 		<tr>
 			<td>IMAGE_3:</td>
-			<td><input type="text" value="img_3.." name="img_3"></td>
+			<td><input type="text" value="img_3.." name="img_3" id="size"></td>
 			<td><?php  
 			          //$e8=emptycheck('img_3','please provide the img_3');
 
@@ -91,7 +106,7 @@
 		</tr>
 		<tr>
 			<td>IMAGE_4:</td>
-			<td><input type="text" value="img_4." name="img_4"></td>
+			<td><input type="text" value="img_4." name="img_4" id="size"></td>
 			<td><?php  
 			          //$e9=emptycheck('img_4','please provide the img_4');
 
@@ -99,7 +114,7 @@
 		</tr>
 		<tr>
 			<td>IMAGE_5:</td>
-			<td><input type="text" value="img_5.." name="img_5"></td>
+			<td><input type="text" value="img_5.." name="img_5" id="size"></td>
 			<td><?php  
 			          //$e10=emptycheck('img_5','please provide the img_5');
 
@@ -116,7 +131,7 @@
 				?></td>
 		</tr>
 		<tr>
-			<td><input type="submit" value="Add_Details" id="cent"></td>
+			<td colspan="3" align="center"><input type="submit" value="Add_Details" id="cent"></td>
 		</tr>
 	
 <?php
@@ -148,5 +163,6 @@ if($_SERVER['REQUIEST_METHOD'] == 'POST')
 ?>
 </table>
 </form>
+<div>
 </body>
 </html>
