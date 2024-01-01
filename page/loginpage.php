@@ -78,7 +78,7 @@
     
  <div class="div1">
     <div>
- <form method="POST">
+ <form method="POST" action="getXY.php">
  	<table cellpadding="10vw">
  		<tr><h1>Login</h1></tr>
 	<tr>
