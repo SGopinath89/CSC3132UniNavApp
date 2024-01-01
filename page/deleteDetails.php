@@ -4,17 +4,46 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<style type="text/css">
+		.div1{
+            
+			height: 35%;
+			width: 30%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-style: solid;
+			border-radius: 20px;
+			background-color: rgba(2,0,0,0.2);
+
+		}
+		input{
+			border-radius: 7px;
+			margin-bottom: 5%;
+			margin-top: 5%;
+		}
+		#cent{
+			height: 30px;
+		}
+		#size{
+			width: 90%;
+			height: 30px;
+		}
+	</style>
 </head>
 <body>
-<form method="POST">
-	<table>
+	<div class="div1">
+
+<form method="POST" align="center">
+	<table align="center">
 		<tr>
 			<td>ID:</td>
-		    <td><input type="number" name="id"></td>
+		    <td><input type="number" name="id" id="size"></td>
             <td><?php $e1=emptycheck('id','please provide the  Id'); ?></td>
 	    </tr>
 	    <tr>
-	    	<td><input type="submit" value="delete"></td>
+	    	<td colspan="3" align="center"><input type="submit" value="delete"  id="cent"></td>
 	    </tr>
 	</table>
 </form>
