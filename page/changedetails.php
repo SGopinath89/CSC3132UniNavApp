@@ -1,6 +1,6 @@
 <?php
-  require_once'connection.php';
-  require_once'funct.php';
+  require_once'connection/sqlconnect.php';
+  require_once'connection/function.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,6 +34,13 @@
 			width: 90%;
 			height: 30px;
 		}
+		#length{
+            position: fixed;
+            width: 250px;
+            height: 20px;
+            margin-top: -17px
+        }
+		
 	</style>
 </head>
 <body>
@@ -44,17 +51,17 @@
 		<tr>
 			<td>ID:</td>
 			<td><input type="number" name="id" id="size"></td>
-			<td><?php
+			<td id="length"><?php
 			          $e1=emptycheck('id','please provide the  Id');
 				?></td>
 		</tr>
 		<tr>
 			<td>MAR_left:</td>
-			<td><input type="text" value="X_co.." name="mar_l" id="size"></td>
+			<td><input type="text"  name="mar_l" id="size"></td>
 		</tr>
 		<tr>
 			<td>MAR_top:</td>
-			<td><input type="text" value="Y_co.." name="mar_t" id="size"></td>
+			<td><input type="text"  name="mar_t" id="size"></td>
 		</tr>
 		 <tr>
 			<td>DISCRIPTION:</td>
@@ -67,8 +74,9 @@
 	</table>
 </form>
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $ID = trim($_POST['id']);
-$query1 = "UPDATE mar_img SET ";
+$query1 = "UPDATE Addimage SET ";
 $query2 = " WHERE id = $ID";
 if(!$e1){
 if (isset($_POST['mar_l']) || isset($_POST['mar_t']) || isset($_POST['description'])) {
@@ -89,6 +97,7 @@ if (isset($_POST['mar_l']) || isset($_POST['mar_t']) || isset($_POST['descriptio
         updatetable($connection, $query);
     }
   }
+}
 }
 ?>
 

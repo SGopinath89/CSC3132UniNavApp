@@ -1,3 +1,7 @@
+<?php
+require_once'connection/sqlconnect.php';
+require_once'connection/function.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
     <style type="text/css">
 		.div1{
             margin-top: 110px;
-			height: 300px;
+			height: 320px;
 			width: 380px;
 			position: absolute;
 			top: 50%;
@@ -57,6 +61,12 @@
             padding-left: 20px;
             padding-right: 20px;
         }
+        #length{
+            position: fixed;
+            width: 250px;
+            height: 20px;
+            margin-top: -17px
+        }
     
     </style>
 </head>
@@ -78,19 +88,23 @@
     
  <div class="div1">
     <div>
- <form method="POST" action="getXY.php">
+ <form method="POST">
  	<table cellpadding="10vw">
  		<tr><h1>Login</h1></tr>
 	<tr>
 		<td><b>Username :</b></td>
 		<td><input type="text" name="Uname" id='inpt'></td>
-        <td><?php// $e1 = emptycheck('Uname','please provide the userNAME!!'); ?></td>
+        <td id="length"><?php 
+             $e1 = emptycheck('Uname','please provide the userNAME!!'); 
+            ?></td>
 	</tr>
 	
 	<tr>
 		<td><b>Password:</b></td>
 		<td><input type="text" name="createpwd" id='inpt'></td>
-        <td><?php //$e2 = emptycheck('createpwd','please provide the password!!'); ?></td>
+        <td id="length" colspan=2><?php 
+             $e2 = emptycheck('createpwd','please provide the password!!'); 
+             ?></td>
 	</tr>	
     <tr align='center'>
         <td colspan=3><input type="checkbox" name="keplog">
@@ -115,8 +129,7 @@
 </div>
  
 <?php
-require_once'connection/sqlconnect.php';
-require_once'connection/function.php';
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_username = trim($_POST['Uname']);
@@ -125,6 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(!$e1 && !$e2)
     {
         login($input_username,$input_password,$rememberme,$connection);
+       
     }
     
 }

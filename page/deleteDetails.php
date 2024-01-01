@@ -1,3 +1,7 @@
+<?php
+require_once'connection/sqlconnect.php';
+require_once'connection/function.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +34,12 @@
 			width: 90%;
 			height: 30px;
 		}
+		#length{
+            position: fixed;
+            width: 250px;
+            height: 20px;
+            margin-top: -17px
+        }
 	</style>
 </head>
 <body>
@@ -40,25 +50,27 @@
 		<tr>
 			<td>ID:</td>
 		    <td><input type="number" name="id" id="size"></td>
-            <td><?php $e1=emptycheck('id','please provide the  Id'); ?></td>
+            <td id="length"><?php 
+			       $e1=emptycheck('id','please provide the  Id'); 
+			     ?></td>
 	    </tr>
 	    <tr>
 	    	<td colspan="3" align="center"><input type="submit" value="delete"  id="cent"></td>
 	    </tr>
-	</table>
-</form>
+	
 <?php
-  require_once'connection.php';
-  require_once'funct.php';
-if($_SERVER['REQUIES_METHOD'] == 'POST')
+  
+if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$ID=trim($_POST['id']);
-	$query="DELETE FROM mar_img WHERE id = $ID;";
+	$query="DELETE FROM Addimage WHERE id = $ID;";
     if(!$e1)
     {
     updatetable($connection,$query);
     }
 }
 ?>
+</table>
+</form>
 </body>
 </html>
