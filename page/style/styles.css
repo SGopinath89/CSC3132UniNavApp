@@ -11,14 +11,8 @@ header {
     width: 0;
     z-index: 100;
 } 
-.images
-{
-    background-image: url('uovmap.jpg');
-    height: 170px;
-    background-repeat: no-repeat;
-    width: 170px;
-    background-size: cover;
-}
+
+
 a:hover{
     color:rgb(195, 248, 72);
     
@@ -50,4 +44,12 @@ a{
     background-size: cover;
     border: 15px solid black;
 
+}
+.uf{
+    position: sticky;
+    background-color: gray;
+    color:rgb(4, 78, 53);
+    border:5px;
+
+    
 }

@@ -65,6 +65,13 @@
         p{
            margin-top: 5px;
         }
+        #im{
+            height: 800px;
+            background-image: url('resource/uovmap.jpg');
+            background-position: center;
+            background-size: cover;
+            border: 15px solid black;
+        }
 
     </style>
 </head>

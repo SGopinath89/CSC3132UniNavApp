@@ -11,7 +11,8 @@
 			position: fixed;
 			left: 40%;
 			right: 40%;
-
+			margin-top: 10%
+			
 		}
 		#cent{
 			height: 30px;
@@ -22,8 +23,9 @@
 <body>
 	<?php include "header/header.php"?>
     <?php include "header/navpanel1.php"?>
+<div class='uf'>
 <form method="POST">
-	<table>
+	<table >
 		<tr>
 			<td>ID: </td>
 			<td><input type="number" value="ID..." name="id"></td>
@@ -115,9 +117,12 @@
 
 				?></td>
 		</tr>
-		<tr>
-			<td><input type="submit" value="Add_Details" id="cent"></td>
+		<tr align="center">
+			<td colspan=3><input type="submit" value="Add_Details" id="cent"></td>
 		</tr>
+	</table>
+	</form>
+</div>
 	
 <?php
 require_once'connection.php';
@@ -146,7 +151,6 @@ if($_SERVER['REQUIEST_METHOD'] == 'POST')
 
 }
 ?>
-</table>
-</form>
+
 </body>
 </html>
