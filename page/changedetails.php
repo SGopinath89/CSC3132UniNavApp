@@ -8,32 +8,61 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<style type="text/css">
+	.div1{
+            margin-top: 1%;
+			height: 80%;
+			width: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-style: solid;
+			border-radius: 20px;
+			background-color: rgba(2,0,0,0.2);
+
+		}
+		input{
+			border-radius: 7px;
+			margin-bottom: 3%;
+			margin-top: 3%;
+		}
+		#cent{
+			height: 30px;
+		}
+		#size{
+			width: 90%;
+			height: 30px;
+		}
+	</style>
 </head>
 <body>
-<form method="POST">
-	<table>
+	<div class="div1">
+
+<form method="POST" align="center">
+	<table align="center">
 		<tr>
 			<td>ID:</td>
-			<td><input type="number" name="id"></td>
+			<td><input type="number" name="id" id="size"></td>
 			<td><?php
 			          $e1=emptycheck('id','please provide the  Id');
 				?></td>
 		</tr>
 		<tr>
 			<td>MAR_left:</td>
-			<td><input type="text" value="X_co.." name="mar_l"></td>
+			<td><input type="text" value="X_co.." name="mar_l" id="size"></td>
 		</tr>
 		<tr>
 			<td>MAR_top:</td>
-			<td><input type="text" value="Y_co.." name="mar_t"></td>
+			<td><input type="text" value="Y_co.." name="mar_t" id="size"></td>
 		</tr>
 		 <tr>
 			<td>DISCRIPTION:</td>
-			<td><input type="text" value="discription..." name="description"></td>
+			<td><textarea type="text" rows="10%" cols="60%" name="description"></textarea></td>
 		</tr>
 		<tr>
 			
-			<td><input type="submit" value="update"></td>
+			<td colspan="3" align="center"><input type="submit" value="update" id="cent"></td>
 		</tr>
 	</table>
 </form>
