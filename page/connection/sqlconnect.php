@@ -2,7 +2,7 @@
 define('HOST','localhost');
 define('USERNAME','root');
 define('PWD','');
-define('DB','UOV');
+define('DB','vavuniya_uni');
 $connection = mysqli_connect(HOST,USERNAME,PWD,DB);
 if($connection){
     echo "";

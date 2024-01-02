@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+ require_once'connection/function.php';
+ require_once'connection/sqlconnect.php';
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +11,7 @@
 
     <style type="text/css">
 		#div{
+			margin-top: 110px;
 			height: 400px;
 			width: 380px;
 			position: absolute;
@@ -27,6 +31,8 @@
            
 			border-radius: 9px;
 			height: 20px;
+			margin-top: 5%;
+			margin-bottom: 5%;
 		}
 		.cent{
             
@@ -38,6 +44,12 @@
 		}
         h1{
             text-align: center;
+        }
+		#length{
+            position: fixed;
+            width: 250px;
+            height: 20px;
+            margin-top: -17px
         }
 
 
@@ -53,18 +65,19 @@
     ?>
      <div id='div'>
  <form method="POST">
- 	<table>
+ 	<table align="center">
  		<tr><h1>Signin</h1></tr>
 	<tr>
 		<td><b>Username :</b></td>
 		<td><input type="text" name="Uname"></td>
-		<td><?php $e2=emptycheck('Uname','please provide the userNAME!!');
+		<td id="length"><?php $e2=emptycheck('Uname','please provide the userNAME!!');
 		     ?></td>
 	</tr>
 	<tr>
 		<td><b>Id-No      :</b></td>
 		<td><input type="text" name="id"></td>
-		<td><?php $d1=duplicateId($value,$connection);
+		<td id="length"><?php 
+		         $d1=duplicateId('id',$connection);
 		         $e1=emptycheck('Uname','please provide the user ID!!');
 		     ?></td>
 	</tr>
@@ -72,19 +85,22 @@
 	<tr>
 		<td><b>Email    :</b></td>
 		<td><input type="text" name="email"></td>
-		<td><?php $e3=emptycheck('Uname','please provide the email!!');
-		     ?></td>
+		<td id="length"><?php 
+		             $e3=emptycheck('Uname','please provide the email!!');
+		        ?></td>
 	</tr>
 	<tr>
 		<td><b>Create Password:</b></td>
 		<td><input type="text" name="createpwd"></td>
-		<td><?php $e4=emptycheck('Uname','please provide the password!!');
-		     ?></td>
+		<td id="length"><?php 
+		           $e4=emptycheck('Uname','please provide the password!!');
+		        ?></td>
 	</tr>
 	<tr>
 		<td><b>Confirm Password:</b></td>
 		<td><input type="text" name="confirmpwd"></td>
-		<td><?php $e5=emptycheck('Uname','please provide the password!!');
+		<td id="length"><?php 
+		           $e5=emptycheck('Uname','please provide the password!!');
 		     ?></td>
 	</tr>
 	
@@ -98,19 +114,23 @@
 </form>
 
     <?php
-    require_once'connection/function.php';
-    require_once'connection/sqlconnect.php';
+   
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $USERNAME = $_POST['Uname'];
         $IDN = $_POST['id'];
         $EMAIL = $_POST['email'];
         $CR_PWD = $_POST['createpwd'];
         $CO_PWD = $_POST['confirmpwd'];
-        if (!$d1 && !$e1 && !$e2 && !$e3 && !$e4 && !$e5){
-			    $query = "INSERT INTO admindetails VALUES('$USERNAME','$IDN','$EMAIL','$CR_PWD','$CO_PWD')";
+		if($CR_PWD == $CO_PWD){
+        if (!$d1 && !$e1 && !$e2 && !$e3 && !$e4 && !$e5)
+		     {
+			    $query = "INSERT INTO Admin VALUES('$USERNAME','$IDN','$EMAIL','$CR_PWD','$CO_PWD')";
                ExecuteQuery($query,$connection,'signin successful!!');
-        }
-    }
+             }
+          }else{
+			echo"<p style='color:red; margin-top:-3%'>Pasword is not match</p>";
+		  }
+      }
 
     ?>
 	 </div>

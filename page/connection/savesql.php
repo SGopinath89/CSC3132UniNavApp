@@ -2,8 +2,7 @@
 function ExecuteQuery($query,$connect,$msg)
 {
     $count=0;
-    $result = mysqli_query($connect,$query);
-    {
+    $result = mysqli_query($connect,$query); 
         if ($result) {
             echo "$msg";
 
@@ -11,6 +10,5 @@ function ExecuteQuery($query,$connect,$msg)
         else{
             die("Error".mysqli_error($connect));
         }
-    }
 }
 ?>

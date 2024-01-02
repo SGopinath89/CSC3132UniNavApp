@@ -6,7 +6,14 @@
     <title>Page Title</title>
     <link rel="stylesheet" href="style/styles.css">
     <style type="text/css">
-        
+       #im{
+    height: 800px;
+    background-image: url('resource/uovmap.jpg');
+    background-position: center;
+    background-size: cover;
+    border: 15px solid black;
+
+     } 
         .frame {
       width: 200px;
       height: 200px;
@@ -65,13 +72,6 @@
         p{
            margin-top: 5px;
         }
-        #im{
-            height: 800px;
-            background-image: url('resource/uovmap.jpg');
-            background-position: center;
-            background-size: cover;
-            border: 15px solid black;
-        }
 
     </style>
 </head>
@@ -83,52 +83,49 @@
     <div class="sticky" id="im">
     <?php
 require_once'connection/sqlconnect.php';
-$query1="SELECT * FROM mar_img";
+$query1="SELECT * FROM Addimage";
 $result1=mysqli_query($connection,$query1);
 $count=mysqli_num_rows($result1);
-for ($i = 1; $i <= 1; $i++) {
-    $query="SELECT * FROM mar_img WHERE id='$i'";
+for ($i = 1; $i <= $count; $i++) {
+    $query="SELECT * FROM Addimage WHERE id='$i'";
     $result=mysqli_query($connection,$query);
     foreach ($result as $key => $value) {
-        $m_l=$value['mar_left'];
-        $m_t=$value['mar_top'];
-        $loc=$value['img_loc'];
+        $m_l=$value['mar_l'];
+        $m_t=$value['mar_t'];
+        $loc=$value['b_img'];
         $m_l1=$m_l;
         $m_t1=$m_t;
     
-    echo "<img src='$loc.jpg' style='margin-left: {$m_l1}vw; margin-top: {$m_t1}vw; padding: 0px' id='a{$i}' id='p'>";
+    echo "<img src='resource/$loc.jpg' style='margin-left: {$m_l1}vw; margin-top: {$m_t1}vw; padding: 0px' id='a{$i}' id='p'>";
    }
 }
 ?>
 
 
 <?php
-$query2="SELECT * FROM cre_div;";
-$result2=mysqli_query($connection,$query2);
-$count2=mysqli_num_rows($result2);
-for($j=1; $j<=$count2; $j++)
+for($j=1; $j<=$count; $j++)
 {
-    $query3="SELECT * FROM cre_div WHERE id='$j'";
+    $query3="SELECT * FROM Addimage WHERE id='$j'";
     $result3=mysqli_query($connection,$query3);
     foreach ($result3 as $key => $value)
     {
         $im_1=$value['img_1'];
         $im_2=$value['img_2'];
         $im_3=$value['img_3'];
-        $hed=$value['head'];
+        $hed=$value['heading'];
         $ID=$value['id'];
-        $dis=$value['discreption'];
+        $dis=$value['description'];
         $sorttext=substr($dis, 0, 100);
-   echo"<div class='sticky'>";
+   echo"<div>";
         echo"<div class='frame' id='div{$j}'>";
            echo"<img src='Close.png' id='c{$j}' class='siz'>";
            echo"<h2>$hed</h2>";
-           echo"<img src='$im_1.jpg'>";
-           echo"<img src='$im_2.jpg'>";
-           echo"<img src='$im_3.jpg'>";
+           echo"<img src='resource/$im_1.jpg' id='s_size'>";
+           echo"<img src='resource/$im_2.jpg' id='s_size'>";
+           echo"<img src='resource/$im_3.jpg' id='s_size'>";
            echo "<b>discreption:</b><br>";
            echo"<p>$sorttext</p>";
-           echo "<a href='slied.php?val=" . urlencode($ID) . "'>view more</a>";
+           echo "<a href='moredetails.php?val=" . urlencode($ID) . "'>view more</a>";
            
         echo"</div>";
    echo"</div>";

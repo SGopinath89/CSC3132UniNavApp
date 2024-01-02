@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+require_once'connection/sqlconnect.php';
+?><!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +10,13 @@ body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
 img {vertical-align: middle;}
 
-/* Slideshow container */
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -31,18 +32,18 @@ img {vertical-align: middle;}
   user-select: none;
 }
 
-/* Position the "next button" to the right */
+
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
+
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -53,7 +54,7 @@ img {vertical-align: middle;}
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
+
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -62,7 +63,7 @@ img {vertical-align: middle;}
   top: 0;
 }
 
-/* The dots/bullets/indicators */
+
 .dot {
   cursor: pointer;
   height: 15px;
@@ -78,7 +79,7 @@ img {vertical-align: middle;}
   background-color: #717171;
 }
 
-/* Fading animation */
+
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -89,7 +90,7 @@ img {vertical-align: middle;}
   to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
+
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
@@ -99,10 +100,9 @@ img {vertical-align: middle;}
 
 <div class="slideshow-container">
   <?php
-  require_once'connection.php';
   if(isset($_GET['val'])){
   $k=urldecode($_GET['val']);
-     $query1="SELECT * FROM cre_div WHERE id='$k';";
+     $query1="SELECT * FROM Addimage WHERE id='$k';";
        $result1=mysqli_query($connection,$query1);
        foreach ($result1 as $key => $value) {
         $im_1=$value['img_1'];
@@ -110,46 +110,43 @@ img {vertical-align: middle;}
         $im_3=$value['img_3'];
         $im_4=$value['img_4'];
         $im_5=$value['img_5'];
-        $dis=$value['discreption'];
+        $dis=$value['description'];
 
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>1 / 5</div>";
-  echo"<img src='$im_1.jpg' style='width:1000px; height:600px' >";
-  echo"<div class='text'>Caption Text</div>";
+  echo"<img src='resource/$im_1.jpg' style='width:1000px; height:600px' >";
+  echo"<div class='text'>Caption one</div>";
 echo"</div>";
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>2 / 5</div>";
-  echo"<img src='$im_2.jpg' style='width:1000px; height:600px'>";
+  echo"<img src='resource/$im_2.jpg' style='width:1000px; height:600px'>";
   echo"<div class='text'>Caption Two</div>";
 echo"</div>";
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>3 / 5</div>";
-  echo"<img src='$im_3.jpg' style='width:1000px; height:600px'>";
+  echo"<img src='resource/$im_3.jpg' style='width:1000px; height:600px'>";
   echo"<div class='text'>Caption Three</div>";
 echo"</div>";
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>4 / 5</div>";
-  echo"<img src='$im_4.jpg' style='width:100%''>";
-  echo"<div class='text'>Caption Three</div>";
+  echo"<img src='resource/$im_4.jpg' style='width:1000px; height:600px'>";
+  echo"<div class='text'>Caption four</div>";
 echo"</div>";
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>5 / 5</div>";
-  echo"<img src='$im_5.jpg' style='width:100%''>";
-  echo"<div class='text'>Caption Three</div>";
+  echo"<img src='resource/$im_5.jpg' style='width:1000px; height:600px'>";
+  echo"<div class='text'>Caption five</div>";
 echo"</div>";
 echo"<a class='prev' onclick='plusSlides(-1)'>❮</a>";
 echo"<a class='next' onclick='plusSlides(1)'>❯</a>";
 
 echo"</div>";
-echo"<div>";
-  echo"<b>&nbsp&nbspDiscription:</b> <br>";
-  echo"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$dis";
-echo"</div>";
+
     }
   }
 
@@ -164,7 +161,13 @@ echo"</div>";
   <span class="dot" onclick="currentSlide(5)"></span> 
   
 </div>
+<?php
+echo"<div>";
+echo"<b>&nbsp&nbspDiscription:</b> <br>";
+echo"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$dis";
+echo"</div>";
 
+?>
 <script>
 let slideIndex = 1;
 showSlides(slideIndex);
