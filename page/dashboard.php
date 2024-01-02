@@ -11,13 +11,14 @@
             border:5px solid;
             margin: 10px;
         }
-        .leftdiv{
-            height:80%;
+        .menu{
+            height:auto;
             width: 150px;
             border:2px solid;
             margin: 5px;
         }
-        .rightdiv{
+        .content{
+            flex:1;
             height:80%;
             width: 90%;
             border:2px solid;
@@ -43,19 +44,33 @@
     </style>
 </head>
 <body>
+    
+    <?php include "header/header.php"?>
+    <?php include "header/navpanel1.php"?>
     <div class="maindiv">
-        <div class="leftdiv">
+        <div class="menu">
             <ul>
-                <li><a href="#">GET X Y</a></li>
-                <li><a href="#">ADD Location</a></li>
-                <li><a href="#">Delete Location</a></li>
-                <li><a href="#">Update Location</a></li>
-                <li><a href="#">SignIn</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="?content=getXY.php">GET X Y</a></li>
+                <li><a href="?content=addplace.php">ADD Location</a></li>
+                <li><a href="?content=deleteplace.php">Delete Location</a></li>
+                <li><a href="?content=updateplace.php">Update Location</a></li>
+                <li><a href="?content=signinpage.php">SignIn</a></li>
+                <li><a href="?content=logoutpage.php">Logout</a></li>
             </ul>
         </div>
-        <div class="rightdiv">
-            <img src="resource/uovmap.jpg" width=100%>
+        <div class="content">
+            <?php
+                if(isset($_GET['content'])){
+                    $contentPage=$_GET['content'];
+                    if(file_exists($contentPage)){
+                        include($contentPage);
+                    }
+                }else{
+                    echo '<img src="resource/uovmap.jpg" width=100%>';
+                }
+                
+            ?>
+            
         </div>
     </div>
 </body>

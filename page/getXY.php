@@ -22,8 +22,6 @@
 </head>
 <body >
    
-    <?php include "header/header.php"?>
-    <?php include "header/navpanel1.php"?>
   <div onclick="showCoords(event)" style="border:1px solid black;padding:4px">
     <div class="sticky-" id='im'>
     <p id="demo">Coordinates:</p>

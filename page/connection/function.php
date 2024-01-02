@@ -87,7 +87,7 @@ function login($name,$pwd,$keplog,$conn)
 			$_SESSION['name']=$name;
 		}
 		
-		header('Location:editpage.php');
+		header('Location:dashboard.php');
 	   
 }
 	else{

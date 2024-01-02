@@ -37,7 +37,7 @@
 		.cent{
             
 			height: 30px;
-			position: fixed;
+			width:100px;
 			left: 40%;
 			right: 40%;
 
@@ -57,13 +57,10 @@
 </head>
 <body>
 
-	<?php include "header/header.php"?>
-    <?php include "header/navpanel1.php"?>
-<div>
     <?php
     $filename = $_SERVER['PHP_SELF'];
     ?>
-     <div id='div'>
+     <div>
  <form method="POST">
  	<table align="center">
  		<tr><h1>Signin</h1></tr>
@@ -133,6 +130,6 @@
       }
 
     ?>
-	 </div>
+</div>
 </body>
 </html>

@@ -43,7 +43,7 @@ require_once'connection/function.php';
 	</style>
 </head>
 <body>
-	<div class="div1">
+<div>
 
 <form method="POST" align="center">
 	<table align="center">
@@ -59,9 +59,8 @@ require_once'connection/function.php';
 	    </tr>
 	
 <?php
-  require_once'connection.php';
-  require_once'funct.php';
-if($_SERVER['REQUIES_METHOD'] == 'POST')
+ 
+if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$ID=trim($_POST['id']);
 	$query="DELETE FROM Addimage WHERE id = $ID;";
@@ -69,9 +68,10 @@ if($_SERVER['REQUIES_METHOD'] == 'POST')
     {
     updatetable($connection,$query);
     }
-}*/
+}
 ?>
 </table>
 </form>
+</div>
 </body>
 </html>
