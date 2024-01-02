@@ -48,7 +48,7 @@
 	</table>
 </form>
 <?php
-  require_once'connection.php';
+ /* require_once'connection.php';
   require_once'funct.php';
 if($_SERVER['REQUIES_METHOD'] == 'POST')
 {
@@ -58,7 +58,7 @@ if($_SERVER['REQUIES_METHOD'] == 'POST')
     {
     updatetable($connection,$query);
     }
-}
+}*/
 ?>
 </body>
 </html>
