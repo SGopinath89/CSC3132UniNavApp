@@ -39,9 +39,10 @@ function showCoords(event) {
  
  var x_c=(x/windowWidth)*100;
  var y_c=(y/windowHeight)*100;
- var windowWidthInt = parseInt(x_c);
- var windowHeightInt = parseInt(y_c);
-  let text = "X coords: " + windowWidthInt + ", Y coords: " + windowHeightInt;
+ var roundedWindowX = x_c.toFixed(3);
+ var roundedWindowY = y_c.toFixed(3);
+ 
+  let text = "X coords: " + roundedWindowX + ", Y coords: " + roundedWindowY;
   document.getElementById("demo").innerHTML = text;
 }
 </script>

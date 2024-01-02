@@ -93,10 +93,10 @@ for ($i = 1; $i <= 1; $i++) {
         $m_l=$value['mar_left'];
         $m_t=$value['mar_top'];
         $loc=$value['img_loc'];
-        $m_l1=$m_l-35;
-        $m_t1=$m_t-74;
+        $m_l1=$m_l;
+        $m_t1=$m_t;
     
-    echo "<img src='$loc.jpg' style='margin-left: {$m_l1}px; margin-top: {$m_t1}px; padding: 0px' id='a{$i}' id='p'>";
+    echo "<img src='$loc.jpg' style='margin-left: {$m_l1}vw; margin-top: {$m_t1}vw; padding: 0px' id='a{$i}' id='p'>";
    }
 }
 ?>
@@ -154,8 +154,9 @@ for($j=1; $j<=$count2; $j++)
         });
     }
 
-    toggleFrame('a1', 'div1','c1');
-    toggleFrame('a2', 'div2','c2');
+    for (let i = 1; i <= <?php echo $count; ?>; i++) {
+           toggleFrame('a' + i, 'div' + i, 'c' + i);
+        }
     
 </script>
     </div>
