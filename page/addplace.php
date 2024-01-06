@@ -1,7 +1,28 @@
 <?php
 require_once'connection/sqlconnect.php';
 require_once'connection/function.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve the values of x and y sent from JavaScript
+    // $x = $_POST["x"];
+    // $y = $_POST["y"];
+	$x = isset($_POST["x"]) ? $_POST["x"] : null;
+    $y = isset($_POST["y"]) ? $_POST["y"] : null;
+
+// Prepare and execute the SQL query to insert values into the database
+$sql = "INSERT INTO cor (x, y) VALUES ('$x','$y')";
+updatetable($connection,$sql);
+}
+$query="SELECT * FROM cor";
+$result=mysqli_query($connection,$query);
+$row=mysqli_fetch_row($result);
+// $x=$row[0];
+// $y=$row[1];
+$x = isset($row[0]) ? $row[0] : null;
+$y = isset($row[1]) ? $row[1] : null;
+echo "$x,$y";
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +95,7 @@ require_once'connection/function.php';
 		</tr>
 		<tr>
 			<td>MAR_left:</td>
-			<td><input type="text"  name="mar_l" id="size"></td>
+			<td><input type="text"  name="mar_l" id="size" value=<?php echo $x ?>></td>
 			<td id="length"><?php  
 			          $e4=emptycheck('mar_l','please provide the mar_l');
 
@@ -82,7 +103,7 @@ require_once'connection/function.php';
 		</tr>
 		<tr>
 			<td>MAR_top:</td>
-			<td><input type="text"  name="mar_t" id="size"></td>
+			<td><input type="text"  name="mar_t" id="size" value=<?php echo $y ?>></td>
 			<td id="length"><?php  
 			          $e5=emptycheck('mar_t','please provide the mar_t');
 
