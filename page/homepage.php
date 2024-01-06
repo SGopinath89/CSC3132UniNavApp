@@ -6,26 +6,27 @@
     <title>Page Title</title>
     <link rel="stylesheet" href="style/styles.css">
     <style type="text/css">
-       #im{
-    height: 800px;
-    background-image: url('resource/uovmap.jpg');
-    background-position: center;
-    background-size: cover;
-    border: 15px solid black;
+       #img{
+            width:100%;
+            height: 900px;
+            background-position: center;
+            position: absolute;
+            background-size: cover;
+            
 
-     } 
+        } 
         .frame {
-      width: 200px;
-      height: 200px;
-      position: absolute;
-      border-radius: 10px;
-      margin-left: 135px;
-      border: 2px solid #000;
-      background-color: rgb(173, 225, 230);
-      padding: 20px;
-      z-index: 999;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      display: none;
+            width: 200px;
+            height: 200px;
+            
+            border-radius: 10px;
+            margin-left: 135px;
+            border: 2px solid #000;
+            background-color: rgb(173, 225, 230);
+            padding: 20px;
+            z-index: 999;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: none;
         }
         #a2{
             height: 50px;
@@ -69,9 +70,6 @@
         b{
             margin-bottom: 1px;
         }
-        p{
-           margin-top: 5px;
-        }
 
     </style>
 </head>
@@ -80,7 +78,8 @@
     <?php include "header/header.php"?>
     <?php include "header/navpanel1.php"?>
    
-    <div class="sticky" id="im">
+    <div class="">
+    <img src="resource/uovmap.jpg" id="img">
     <?php
 require_once'connection/sqlconnect.php';
 $query1="SELECT * FROM Addimage";
@@ -96,11 +95,10 @@ for ($i = 1; $i <= $count; $i++) {
         $m_l1=$m_l;
         $m_t1=$m_t;
     
-    echo "<img src='resource/$loc.jpg' style='margin-left: {$m_l1}vw; margin-top: {$m_t1}vw; padding: 0px' id='a{$i}' id='p'>";
+    echo "<img src='resource/$loc.jpg' style='margin-left: {$m_l1}vw; margin-top: {$m_t1}px; padding: 0px' id='a{$i}' id='p'>";
    }
 }
 ?>
-
 
 <?php
 for($j=1; $j<=$count; $j++)
@@ -133,7 +131,7 @@ for($j=1; $j<=$count; $j++)
  }
 ?>
 
-    
+  
 </div>
 <script>
     function toggleFrame(openButtonId, frameId,close) {
@@ -156,7 +154,7 @@ for($j=1; $j<=$count; $j++)
         }
     
 </script>
-    </div>
+    
    
 </body>
 </html>
