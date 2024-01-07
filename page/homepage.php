@@ -26,8 +26,8 @@
         
         
         .a1{
-            height: 40px;
-            width: 40px;
+            height: 30px;
+            width: 30px;
             margin-left: 200px;
             margin-top: 200px;
         }
@@ -186,12 +186,13 @@ for ($i = 1; $i <= $count; $i++) {
         $loc=$value['b_img'];
         $he=$value['heading'];
         $icon=$value['mar_t']-28;
+        $l=$m_l-5;
        
         $ic=$m_l+38;
 
     
-    echo "<img src='resource/$loc.jpg' style='margin-left: {$m_l}px; margin-top: {$m_t}px; padding: 0px' id='a{$i}' class='a1'>";
-    echo "<img src='resource/LocationIcon.png' style='margin-left: {$m_l}px; margin-top: {$icon}px; padding: 0px height: 40px; width: 40px' class='ex2' id='ico{$i}'>";
+    echo "<img src='resource/bicon/$loc.png' style='margin-left: {$m_l}px; margin-top: {$m_t}px; padding: 0px' id='a{$i}' class='a1'>";
+    echo "<img src='resource/LocationIcon.png' style='margin-left: {$l}px; margin-top: {$icon}px; padding: 0px height: 40px; width: 40px' class='ex2' id='ico{$i}'>";
     echo"<div  id='big' style='margin-left: {$ic}px; margin-top: {$icon}px;'><h4 class='typed-text'>$he</h4></div>";
     
     
@@ -221,7 +222,7 @@ for($j=1; $j<=$count; $j++)
         
    echo"<div>";
         echo"<div class='frame' id='div{$j}' style='margin-left: {$m_l}px; margin-top: {$m_t}px;'>";
-           echo"<img src='Close.png' id='c{$j}' class='siz'>";
+           echo"<img src='resource/Close.png' id='c{$j}' class='siz'>";
            echo"<h2>$hed</h2>";
            echo"<img src='resource/$im_1.jpg' id='s_size'>";
            echo"<img src='resource/$im_2.jpg' id='s_size'>";

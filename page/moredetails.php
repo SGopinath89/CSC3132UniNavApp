@@ -12,9 +12,10 @@ img {vertical-align: middle;}
 
 
 .slideshow-container {
+
   max-width: 1000px;
   position: relative;
-  margin: auto;
+  margin:;
 }
 
 .prev, .next {

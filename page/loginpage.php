@@ -67,7 +67,17 @@ require_once'connection/function.php';
             height: 20px;
             margin-top: -17px
         }
-    
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button-link:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -121,7 +131,9 @@ require_once'connection/function.php';
 	<tr align='center'>
 	  <td colspan=3>
 		<input type="submit" name="Adddetail" value="login" class="cent" >
+        <a href="index.php" class="button-link">Home</a>
 	  </td>
+      
 	</tr>
 	
 </table>

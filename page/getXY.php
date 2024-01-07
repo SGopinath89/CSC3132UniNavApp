@@ -17,18 +17,18 @@ require_once'connection/function.php';
             font-size: 30px;
         }
         #im{
-          height: 800px;
-          background-image: url('resource/uovmap.jpg');
+          width: 850px;
+          height: 650px;
           background-position: center;
           background-size: cover;
-          border: 15px solid black;
         }
     </style>
 </head>
 <body >
 <a href="dashboard.php?content=addplace.php">
   <div onclick="showCoords(event)" style="border:1px solid black;padding:4px">
-    <div class="sticky-" id='im'>
+    <div class="sticky" id='im'>
+    <img src="resource/uovmap.jpg" id="im">
     <p id="demo">Coordinates:</p>
     </div>
      <script src="script/xycatcher.js">
