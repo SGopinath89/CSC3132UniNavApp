@@ -85,9 +85,19 @@ echo "$x,$y";
 
 				?></td>
 		</tr>
+		
 		<tr>
 			<td>BUILDING_img:</td>
-			<td><input type="text"  name="b_img" id="size"></td>
+			<td><select name="b_img" id="size">
+				<?php
+				$query="SELECT * FROM buildingicon"; 
+				$result=mysqli_query($connection,$query);
+				while($row=mysqli_fetch_row($result)){
+					echo "<option value='$row[0]'>$row[1]</option>"; 
+				}
+				?>
+				</select>
+			</td>
 			<td id="length"><?php  
 			          $e3=emptycheck('b_img','please provide the  b_img');
 
