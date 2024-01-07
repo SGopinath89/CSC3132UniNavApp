@@ -16,27 +16,40 @@ require_once'connection/function.php';
             color: red;
             font-size: 30px;
         }
-
-        #im {
-            height: 800px;
-            background-image: url('resource/uovmap.jpg');
-            background-position: center;
-            background-size: cover;
-            border: 15px solid black;
+        #im{
+          height: 800px;
+          background-image: url('resource/uovmap.jpg');
+          background-position: center;
+          background-size: cover;
+          border: 15px solid black;
         }
     </style>
 </head>
-<body>
-<a href="dashboard.php?content=addplace.php">
-<div onclick="showCoords(event)" style="border:1px solid black;padding:4px">
-    
+<body >
+   
+    <?php include "header/header.php"?>
+    <?php include "header/navpanel1.php"?>
+  <div onclick="showCoords(event)" style="border:1px solid black;padding:4px">
     <div class="sticky-" id='im'>
-        <p id="demo">Coordinates:</p>
+    <p id="demo">Coordinates:</p>
     </div>
-</div>
-</a>
-<div id="result"></div>
-<script scr="script/xycatcher.js">  
+    
+  </div>
+  <script>
+function showCoords(event) {
+  let x = event.clientX;
+  let y = event.clientY;
+  var windowWidth = window.innerWidth;
+  var windowHeight = window.innerHeight;
+ 
+ var x_c=(x/windowWidth)*100;
+ var y_c=(y/windowHeight)*100;
+ var roundedWindowX = x_c.toFixed(3);
+ var roundedWindowY = y_c.toFixed(3);
+ 
+  let text = "X coords: " + roundedWindowX + ", Y coords: " + roundedWindowY;
+  document.getElementById("demo").innerHTML = text;
+}
 </script>
 
 </body>
