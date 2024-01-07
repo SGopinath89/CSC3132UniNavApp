@@ -26,17 +26,17 @@ require_once'connection/function.php';
     </style>
 </head>
 <body >
-   
-    <?php include "header/header.php"?>
-    <?php include "header/navpanel1.php"?>
+<a href="dashboard.php?content=addplace.php">
   <div onclick="showCoords(event)" style="border:1px solid black;padding:4px">
     <div class="sticky-" id='im'>
     <p id="demo">Coordinates:</p>
     </div>
-    
-  </div>
-  <script src="script/xycatcher.js">
+     <script src="script/xycatcher.js">
   </script>
+  </div>
+  
+  <div id="result"></div>
+ </a>
 
 </body>
 </html>
