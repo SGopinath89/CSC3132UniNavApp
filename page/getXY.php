@@ -35,22 +35,8 @@ require_once'connection/function.php';
     </div>
     
   </div>
-  <script>
-function showCoords(event) {
-  let x = event.clientX;
-  let y = event.clientY;
-  var windowWidth = window.innerWidth;
-  var windowHeight = window.innerHeight;
- 
- var x_c=(x/windowWidth)*100;
- var y_c=(y/windowHeight)*100;
- var roundedWindowX = x_c.toFixed(3);
- var roundedWindowY = y_c.toFixed(3);
- 
-  let text = "X coords: " + roundedWindowX + ", Y coords: " + roundedWindowY;
-  document.getElementById("demo").innerHTML = text;
-}
-</script>
+  <script src="script/xycatcher.js">
+  </script>
 
 </body>
 </html>
