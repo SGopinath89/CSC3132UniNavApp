@@ -12,7 +12,7 @@ require_once'connection/function.php';
     <style type="text/css">
 		.div1{
             margin-top: 110px;
-			height: 320px;
+			height: 400px;
 			width: 380px;
 			position: absolute;
 			top: 50%;
@@ -130,8 +130,8 @@ require_once'connection/function.php';
     </tr>
 	<tr align='center'>
 	  <td colspan=3>
-		<input type="submit" name="Adddetail" value="login" class="cent" >
-        <a href="index.php" class="button-link">Home</a>
+		<input type="submit" name="Adddetail" value="login" class="button-link" >
+        <div align=""><a href="index.php" class="button-link">Home</a></div>
 	  </td>
       
 	</tr>

@@ -131,13 +131,15 @@ function printtable($result)
 		
 
         echo "<tr>";
-		foreach ($result as $key => $row) 		
+		while($row=mysqli_fetch_row($result)){
+		// foreach ($result as $key => $row) 		
 		{
 			foreach ($row as $key => $value) {
 			echo "<td>$value  </td>";
-
 			};
+			echo "<td><a href='deleteplace.php?id=$row[0]'>Delete</a></td>";
               echo "</tr>";
+		}
 		}
 		echo "<table>";
 		

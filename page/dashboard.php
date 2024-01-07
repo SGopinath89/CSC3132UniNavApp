@@ -47,13 +47,13 @@
 <body>
     
     <?php include "header/header.php"?>
-    <?php include "header/navpanel1.php"?>
+    <?php include "header/navpanel2.php"?>
     <div class="maindiv">
         <div class="menu">
             <ul>
                 <li><a href="?content=getXY.php">GET X Y</a></li>
                 <li><a href="?content=addplace.php">ADD Location</a></li>
-                <li><a href="?content=deleteplace.php">Delete Location</a></li>
+                <li><a href="?content=showtable.php">Delete Location</a></li>
                 <li><a href="?content=updateplace.php">Update Location</a></li>
                 <li><a href="?content=signinpage.php">SignIn</a></li>
                 <li><a href="?content=logoutpage.php">Logout</a></li>

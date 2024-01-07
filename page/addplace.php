@@ -20,7 +20,7 @@ $row=mysqli_fetch_row($result);
 // $y=$row[1];
 $x = isset($row[0]) ? $row[0] : null;
 $y = isset($row[1]) ? $row[1] : null;
-echo "$x,$y";
+echo "Coodinates($x,$y)";
 ?>
 
 <!DOCTYPE html>

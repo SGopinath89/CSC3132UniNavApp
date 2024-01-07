@@ -45,11 +45,19 @@ require_once'connection/function.php';
 <body>
 <div>
 
+<?php
+
+	$id=$_GET['id'];
+	$query="DELETE FROM Addimage where id='$id'";
+	mysqli_query($connection,$query);
+	header('location:showtable.php');
+
+?>
 <form method="POST" align="center">
 	<table align="center">
 		<tr>
 			<td>ID:</td>
-		    <td><input type="number" name="id" id="size"></td>
+		    <td><input type="number" name="id" id="size" value=id></td>
             <td id="length"><?php 
 			       $e1=emptycheck('id','please provide the  Id'); 
 			     ?></td>

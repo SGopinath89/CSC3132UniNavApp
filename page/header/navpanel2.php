@@ -3,8 +3,8 @@
             color:white;
             font-family: Barlow medium;" cellpadding="1vw">
 <tr>
-    <td><a href="homepage.php">Home</a></td>
-    <td><a href="logoutpage.php">Login</a></td>
+    <!-- <td><a href="homepage.php">Home</a></td> -->
+    <td><a href="logoutpage.php">Logout</a></td>
 </tr>
 </table>
 </div>

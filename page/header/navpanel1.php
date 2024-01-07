@@ -3,7 +3,7 @@
             color:white;
             font-family: Barlow medium;" cellpadding="1vw">
 <tr>
-    <td><a href="homepage.php">Home</a></td>
+    <!-- <td><a href="homepage.php">Home</a></td> -->
     <td><a href="loginpage.php">Login</a></td>
 </tr>
 </table>
