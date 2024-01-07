@@ -1,6 +1,6 @@
 <?php
-  require_once'connection/sqlconnect.php';
-  require_once'connection/function.php';
+ require_once'connection/sqlconnect.php';
+ require_once'connection/function.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,6 +26,7 @@
 			border-radius: 7px;
 			margin-bottom: 3%;
 			margin-top: 3%;
+			
 		}
 		#cent{
 			height: 30px;
@@ -44,14 +45,14 @@
 	</style>
 </head>
 <body>
-	<div class="div1">
+	<div>
 
 <form method="POST" align="center">
 	<table align="center">
 		<tr>
 			<td>ID:</td>
 			<td><input type="number" name="id" id="size"></td>
-			<td id="length"><?php
+			<td><?php
 			          $e1=emptycheck('id','please provide the  Id');
 				?></td>
 		</tr>
@@ -65,7 +66,7 @@
 		</tr>
 		 <tr>
 			<td>DISCRIPTION:</td>
-			<td><textarea type="text" rows="10%" cols="60%" name="description"></textarea></td>
+			<td><textarea type="text" rows="10%" cols="50%" name="description"></textarea></td>
 		</tr>
 		<tr>
 			
@@ -74,30 +75,31 @@
 	</table>
 </form>
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$ID = trim($_POST['id']);
-$query1 = "UPDATE Addimage SET ";
-$query2 = " WHERE id = $ID";
-if(!$e1){
-if (isset($_POST['mar_l']) || isset($_POST['mar_t']) || isset($_POST['description'])) {
-    $arr = array();
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+	$ID = trim($_POST['id']);
+	$query1 = "UPDATE Addimage SET ";
+	$query2 = " WHERE id = $ID";
+	if(!$e1){
+	if (isset($_POST['mar_l']) || isset($_POST['mar_t']) || isset($_POST['description'])) {
+		$arr = array();
 
-    if (!empty($_POST['mar_l'])) {
-        $arr[] = "mar_l = '" . $_POST['mar_l'] . "'";
-    }
-    if (!empty($_POST['mar_t'])) {
-        $arr[] = "mar_t = '" . $_POST['mar_t'] . "'";
-    }
-    if (!empty($_POST['description'])) {
-        $arr[] = "description = '" . $_POST['description'] . "'";
-    }
+		if (!empty($_POST['mar_l'])) {
+			$arr[] = "mar_l = '" . $_POST['mar_l'] . "'";
+		}
+		if (!empty($_POST['mar_t'])) {
+			$arr[] = "mar_t = '" . $_POST['mar_t'] . "'";
+		}
+		if (!empty($_POST['description'])) {
+			$arr[] = "description = '" . $_POST['description'] . "'";
+		}
 
-    if (!empty($arr)) {
-        $query = $query1 . implode(", ", $arr) . $query2;
-        updatetable($connection, $query);
-    }
-  }
-}
+		if (!empty($arr)) {
+			$query = $query1 . implode(", ", $arr) . $query2;
+			updatetable($connection, $query);
+		}
+	}
+	}
 }
 ?>
 

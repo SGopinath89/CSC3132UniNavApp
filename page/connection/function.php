@@ -5,11 +5,20 @@ function updatetable($conn,$query)
 		if($result)
 		{
 			echo "succesful update<br>";
+				// $query="DELETE FROM cor";
+				// mysqli_query($conn,$query);
+				//deletecor();
+				header('location:cordelete.php');
 		}
 		else{
 			die("error".mysqli_error($conn));
 		}
 
+}
+function deletecor()
+{
+	$query="DELETE FROM cor";
+	mysqli_query($conn,$query);
 }
 function emptycheck($value,$msg)
 {
@@ -87,7 +96,7 @@ function login($name,$pwd,$keplog,$conn)
 			$_SESSION['name']=$name;
 		}
 		
-		header('Location:editpage.php');
+		header('Location:cordelete.php');
 	   
 }
 	else{
@@ -101,7 +110,7 @@ function ExecuteQuery($query,$connect,$msg)
     $result = mysqli_query($connect,$query); 
         if ($result) {
             echo "<p style='color:gray; margin-top:-3%'>$msg</p>";
-
+			
         }
         else{
             die("Error".mysqli_error($connect));

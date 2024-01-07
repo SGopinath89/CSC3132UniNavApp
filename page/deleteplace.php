@@ -43,7 +43,7 @@ require_once'connection/function.php';
 	</style>
 </head>
 <body>
-	<div class="div1">
+<div>
 
 <form method="POST" align="center">
 	<table align="center">
@@ -59,7 +59,7 @@ require_once'connection/function.php';
 	    </tr>
 	
 <?php
-  
+ 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$ID=trim($_POST['id']);
@@ -72,5 +72,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 ?>
 </table>
 </form>
+</div>
 </body>
 </html>
