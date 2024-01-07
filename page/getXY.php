@@ -11,38 +11,47 @@
           color:red;
           font-size:30px;
         }
-        #im{
-          height: 800px;
-          background-image: url('resource/uovmap.jpg');
-          background-position: center;
-          background-size: cover;
-          border: 15px solid black;
+        #img{
+          width: 850px;
+          height: 650px;
+    
+   
+     }
+     .image-container {
+            position: relative;
+            
+        }
+
+        
+        .image-container img:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 0;
+           
         }
     </style>
 </head>
 <body >
    
-    <?php include "header/header.php"?>
-    <?php include "header/navpanel1.php"?>
-  <div onclick="showCoords(event)" style="border:1px solid black;padding:4px">
-    <div class="sticky-" id='im'>
-    <p id="demo">Coordinates:</p>
+   
+  <div onclick="showCoords(event)">
+        <!-- First image -->
+        <img src="resource/uovmap.jpg" alt="Image 1" id="img">
+    <div> 
+      <p id="demo">Coordinates:</p>
     </div>
+   
     
   </div>
   <script>
 function showCoords(event) {
+  var bodyElement = document.body;
+  var bodyHeight = bodyElement.clientHeight;
   let x = event.clientX;
   let y = event.clientY;
-  var windowWidth = window.innerWidth;
-  var windowHeight = window.innerHeight;
- 
- var x_c=(x/windowWidth)*100;
- var y_c=(y/windowHeight)*100;
- var roundedWindowX = x_c.toFixed(3);
- var roundedWindowY = y_c.toFixed(3);
- 
-  let text = "X coords: " + roundedWindowX + ", Y coords: " + roundedWindowY;
+  let x_l = x-18;
+  let y_1=y-37;
+  let text = "X coords: " + x_l + ", Y coords: " + y_1;
   document.getElementById("demo").innerHTML = text;
 }
 </script>
