@@ -6,38 +6,34 @@
     <title>Page Title</title>
     <link rel="stylesheet" href="style/styles.css">
     <style type="text/css">
-       #im{
-    height: 800px;
-    background-image: url('resource/uovmap.jpg');
-    background-position: center;
-    background-size: cover;
-    border: 15px solid black;
-
-     } 
+        #im{
+            width: 850px;
+            height: 650px;
+        } 
         .frame {
-      width: 200px;
-      height: 200px;
-      position: absolute;
-      border-radius: 10px;
-      margin-left: 135px;
-      border: 2px solid #000;
-      background-color: rgb(173, 225, 230);
-      padding: 20px;
-      z-index: 999;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      display: none;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        border-radius: 10px;
+        margin-left: 135px;
+        border: 2px solid #000;
+        background-color: rgb(173, 225, 230);
+        padding: 20px;
+        z-index: 999;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        display: none;
         }
-        #a2{
-            height: 50px;
-            width: 50px;
-            margin-left: 125px;
-            margin-top: 470px;
-        }
-        #a1{
-            height: 50px;
-            width: 50px;
+        
+        
+        .a1{
+            height: 40px;
+            width: 40px;
             margin-left: 200px;
             margin-top: 200px;
+        }
+        #b2{
+            height: 20px;
+            width: 20px;
         }
         
         .close{
@@ -76,29 +72,106 @@
             height: 50px;
             width: 65px;
         }
-        @media only screen and (max-width: 600px) {
-        .frame {
-            width: 100%;
-            height: auto;
-            margin-left: 0;
+        #pos{
+            position: absolute;
         }
 
-        #a2,
-        #a1 {
-            margin-left: 0;
+        .image-container {
+           position: relative;
+           
+           
         }
 
-        /* Add more responsive styles as needed */
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+       
+        .ex2{
+            position: absolute;
+        }
+        #big {
+            position: absolute;
+            color: black;
+            background-color: yellow;
+            margin: 0;
+            display: none;
+            border-radius: 10px;
+            width: auto;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ccc;
+            z-index: 2;
+        }
+
+        img.ex2:hover, img.ex2:active {
+            width: 55px;
+            height: 55px;
+        }
+        .ex2:hover + #big {
+            display: block;
+        }  
+        #more{
+            text-align: right;
+            margin-top: 10px;
+        }
+        @keyframes typing {
+      0% {
+        width: 0;
+      }
+      20% {
+        width: 20%;
+      }
+      40% {
+        width: 40%;
+      }
+      60% {
+        width: 60%;
+      }
+      80% {
+        width: 80%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    .typed-text {
+      display: inline-block;
+      border-right: 2px solid white; /* Cursor style */
+      font-size: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 0.4s steps(8);
+    }
+
+    @keyframes blinkCursor {
+      0%, 100% {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #333;
+      }
+    }
+    h4{
+        margin-top: 1px;
+        margin-bottom: 1px;
+        margin-left: 4px;
+        margin-right: 4px;
     }
 
     </style>
 </head>
 <body>
-    
     <?php include "header/header.php"?>
     <?php include "header/navpanel1.php"?>
-   
-    <div class="sticky" id="im">
+<div class="image-container">
+        <!-- First image -->
+        
+             <img src="resource/uovmap.jpg" id="im">
+
+  <!-- <img src="resource/uovmap.jpg" alt="Image 1" id="im"> -->
     <?php
 require_once'connection/sqlconnect.php';
 $query1="SELECT * FROM Addimage";
@@ -111,14 +184,23 @@ for ($i = 1; $i <= $count; $i++) {
         $m_l=$value['mar_l'];
         $m_t=$value['mar_t'];
         $loc=$value['b_img'];
-        $m_l1=$m_l;
-        $m_t1=$m_t;
+        $he=$value['heading'];
+        $icon=$value['mar_t']-28;
+       
+        $ic=$m_l+38;
+
     
-    echo "<img src='resource/$loc.jpg' style='margin-left: {$m_l1}vw; margin-top: {$m_t1}vw; padding: 0px' id='a{$i}' id='p'>";
-   }
+    echo "<img src='resource/$loc.jpg' style='margin-left: {$m_l}px; margin-top: {$m_t}px; padding: 0px' id='a{$i}' class='a1'>";
+    echo "<img src='resource/LocationIcon.png' style='margin-left: {$m_l}px; margin-top: {$icon}px; padding: 0px height: 40px; width: 40px' class='ex2' id='ico{$i}'>";
+    echo"<div  id='big' style='margin-left: {$ic}px; margin-top: {$icon}px;'><h4 class='typed-text'>$he</h4></div>";
+    
+    
+  
+  }
 }
 ?>
 
+</div>   
 
 <?php
 for($j=1; $j<=$count; $j++)
@@ -130,12 +212,15 @@ for($j=1; $j<=$count; $j++)
         $im_1=$value['img_1'];
         $im_2=$value['img_2'];
         $im_3=$value['img_3'];
+        $m_l=$value['mar_l']+20;
+        $m_t=$value['mar_t'];
         $hed=$value['heading'];
         $ID=$value['id'];
         $dis=$value['description'];
         $sorttext=substr($dis, 0, 100);
+        
    echo"<div>";
-        echo"<div class='frame' id='div{$j}'>";
+        echo"<div class='frame' id='div{$j}' style='margin-left: {$m_l}px; margin-top: {$m_t}px;'>";
            echo"<img src='Close.png' id='c{$j}' class='siz'>";
            echo"<h2>$hed</h2>";
            echo"<img src='resource/$im_1.jpg' id='s_size'>";
@@ -143,7 +228,7 @@ for($j=1; $j<=$count; $j++)
            echo"<img src='resource/$im_3.jpg' id='s_size'>";
            echo "<b>discreption:</b><br>";
            echo"<p>$sorttext</p>";
-           echo "<a href='moredetails.php?val=" . urlencode($ID) . "'>view more</a>";
+           echo "<a href='moredetails.php?val=" . urlencode($ID) . "' id='more'>view more</a>";
            
         echo"</div>";
    echo"</div>";
@@ -152,7 +237,7 @@ for($j=1; $j<=$count; $j++)
 ?>
 
     
-</div>
+
 <script>
     function toggleFrame(openButtonId, frameId,close) {
         const openButton = document.getElementById(openButtonId);
@@ -172,9 +257,7 @@ for($j=1; $j<=$count; $j++)
     for (let i = 1; i <= <?php echo $count; ?>; i++) {
            toggleFrame('a' + i, 'div' + i, 'c' + i);
         }
-    
 </script>
-    </div>
    
 </body>
 </html>
