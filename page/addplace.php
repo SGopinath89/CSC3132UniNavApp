@@ -186,10 +186,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	$M_LEFT=trim($_POST['mar_l']);
 	$M_TOP=trim($_POST['mar_t']);
 	$IMG_1=trim($_POST['img_1']);
-	$IMG_2=trim($_POST['img_1']);
-	$IMG_3=trim($_POST['img_1']);
-	$IMG_4=trim($_POST['img_1']);
-	$IMG_5=trim($_POST['img_1']);
+	$IMG_2=trim($_POST['img_2']);
+	$IMG_3=trim($_POST['img_3']);
+	$IMG_4=trim($_POST['img_4']);
+	$IMG_5=trim($_POST['img_5']);
 	$DIS=$_POST['description'];
 
 	$query="INSERT INTO Addimage VALUES('$ID','$HEAD','$B_IMG','$M_LEFT','$M_TOP','$IMG_1','$IMG_2','$IMG_3','$IMG_4','$IMG_5','$DIS')";
