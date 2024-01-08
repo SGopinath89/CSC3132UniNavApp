@@ -10,6 +10,9 @@ require_once'connection/function.php';
     <title>Loginpage</title>
     <link rel="stylesheet" href="style/styles.css">
     <style type="text/css">
+        .div2{
+            margin-top:30px;
+        }
 		.div1{
             margin-top: 110px;
 			height: 400px;
@@ -70,13 +73,13 @@ require_once'connection/function.php';
         .button-link {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #3C6255;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
         }
         .button-link:hover {
-            background-color: #0056b3;
+            background-color: #03C988;
         }
     </style>
 </head>
@@ -131,7 +134,8 @@ require_once'connection/function.php';
 	<tr align='center'>
 	  <td colspan=3>
 		<input type="submit" name="Adddetail" value="login" class="button-link" >
-        <div align=""><a href="index.php" class="button-link">Home</a></div>
+        
+        <div class="div2"><a href="index.php" class="button-link">Home</a></div>
 	  </td>
       
 	</tr>

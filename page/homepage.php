@@ -11,17 +11,17 @@
             height: 650px;
         } 
         .frame {
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        border-radius: 10px;
-        margin-left: 135px;
-        border: 2px solid #000;
-        background-color: rgb(173, 225, 230);
-        padding: 20px;
-        z-index: 999;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        display: none;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border-radius: 10px;
+            margin-left: 135px;
+            border: 2px solid #000;
+            background-color: rgb(173, 225, 230);
+            padding: 20px;
+            z-index: 999;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: none;
         }
         
         
@@ -115,6 +115,9 @@
         #more{
             text-align: right;
             margin-top: 10px;
+        }
+        #more:hover{
+            color:green;
         }
         @keyframes typing {
       0% {
