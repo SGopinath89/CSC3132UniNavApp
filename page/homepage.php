@@ -228,9 +228,9 @@ for($j=1; $j<=$count; $j++)
         echo"<div class='frame' id='div{$j}' style='margin-left: {$m_l}px; margin-top: {$m_t}px;'>";
            echo"<img src='resource/Close.png' id='c{$j}' class='siz'>";
            echo"<h2>$hed</h2>";
-           echo"<img src='resource/$im_1.jpg' id='s_size'>";
-           echo"<img src='resource/$im_2.jpg' id='s_size'>";
-           echo"<img src='resource/$im_3.jpg' id='s_size'>";
+           echo"<img src='resource/bimg/$im_1.jpg' id='s_size'>";
+           echo"<img src='resource/bimg/$im_2.jpg' id='s_size'>";
+           echo"<img src='resource/bimg/$im_3.jpg' id='s_size'>";
            echo "<b>discreption:</b><br>";
            echo"<p>$sorttext</p>";
            echo "<a href='moredetails.php?val=" . urlencode($ID) . "' id='more'>view more</a>";
