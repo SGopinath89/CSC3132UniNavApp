@@ -50,7 +50,7 @@ require_once'connection/function.php';
 	$id=$_GET['id'];
 	$query="DELETE FROM Addimage where id='$id'";
 	mysqli_query($connection,$query);
-	header('location:showtable.php');
+	header('location:dashboard.php?content=showtabledelete.php');
 
 ?>
 <form method="POST" align="center">

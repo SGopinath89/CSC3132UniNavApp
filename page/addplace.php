@@ -195,7 +195,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	$query="INSERT INTO Addimage VALUES('$ID','$HEAD','$B_IMG','$M_LEFT','$M_TOP','$IMG_1','$IMG_2','$IMG_3','$IMG_4','$IMG_5','$DIS')";
 	if(!$d1 && !$e1 && !$e2 && !$e3 && !$e4 && !$e5 && !$e6 && !$e7 && !$e8 && !$e9 && !$e10 && !$e11)
 	{
-		updatetable($connection,$query);
+		addtable($connection,$query);
 	}else{
 		echo"<p>please check the values!!!!</p>";
 	}

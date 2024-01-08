@@ -1,4 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style/styles.css">
+	<style>
+	
+	</style>
+</head>
+<body>
 <?php
+function addtable($conn,$query)
+{
+		$result = mysqli_query($conn,$query);
+		if($result)
+		{
+			echo "succesful update<br>";
+				// $query="DELETE FROM cor";
+				// mysqli_query($conn,$query);
+				//deletecor();
+				header('location:cordelete.php');
+		}
+		else{
+			die("error".mysqli_error($conn));
+		}
+
+}
 function updatetable($conn,$query)
 {
 		$result = mysqli_query($conn,$query);
@@ -9,6 +37,7 @@ function updatetable($conn,$query)
 				// mysqli_query($conn,$query);
 				//deletecor();
 				header('location:cordelete.php');
+				header('location:dashboard.php?content=showtableupdate.php');
 		}
 		else{
 			die("error".mysqli_error($conn));
@@ -116,17 +145,18 @@ function ExecuteQuery($query,$connect,$msg)
             die("Error".mysqli_error($connect));
         }
 }
-function printtable($result)
+function dtable($result)
 {
 	//$result =mysqli_query($conn,$query);
 	if($result)
 	{
-		echo"<table border=1px cellspacing=0px align='center'>";
+		echo"<table border=1px cellspacing=0px align='center' id='pri' align='center'>";
 		echo"<tr>";
 		echo "<td>ID  </td>";
 		echo "<td>heading </td>";
 		echo "<td>margin_left</td>";
 		echo "<td>margin_top </td>";
+		echo "<td>Delete</td>";
     	echo "</tr>";
 		
 
@@ -137,7 +167,7 @@ function printtable($result)
 			foreach ($row as $key => $value) {
 			echo "<td>$value  </td>";
 			};
-			echo "<td><a href='deleteplace.php?id=$row[0]'>Delete</a></td>";
+			echo "<td ><a href='deleteplace.php?id=$row[0]' id='del'>Delete</a></td>";
               echo "</tr>";
 		}
 		}
@@ -149,4 +179,58 @@ function printtable($result)
       }
 
 }
-?>
+function utable($result)
+{
+	//$result =mysqli_query($conn,$query);
+	if($result)
+	{
+		echo"<table border=1px cellspacing=0px align='center' id='pri' align='center'>";
+		echo"<tr>";
+		echo "<td>ID  </td>";
+		echo "<td>heading </td>";
+		echo "<td>margin_left</td>";
+		echo "<td>margin_top </td>";
+		echo "<td>update</td>";
+    	echo "</tr>";
+		
+
+        echo "<tr>";
+		// while($row=mysqli_fetch_row($result)){
+		// // foreach ($result as $key => $row) 		
+		// {
+		// 	foreach ($row as $key => $value) {
+		// 	echo "<td>$value  </td>";
+		// 	};
+		// 	echo "<td ><a href='dashboard.php?content=updateplace.php' id='upd'>Update</a></td>";
+        //       echo "</tr>";
+		// }
+		// }
+		while ($row = mysqli_fetch_row($result)) {
+			echo "<tr>";
+			$id= $row[0];
+			$mrl=$row[3];
+			$mrt=$row[4];
+			$des=$row[10];
+			echo "<td>$row[0]</td>";
+			echo "<td>$row[3]</td>";
+			echo "<td>$row[4]</td>";
+			echo "<td>$row[10]</td>";
+			$updateLink = "dashboard.php?content=updateplace.php&id=$id&mar_l=$mrl&mar_t=$mrt&desc=$des";
+		
+			echo "<td><a href='$updateLink' id='upd'>Update</a></td>";
+		
+			echo "</tr>";
+		}
+		
+		echo "<table>";
+		
+	}else{
+		//die("error".mysqli_error($conn)); commend
+	
+      }
+
+}
+?>	
+</body>
+</html>
+

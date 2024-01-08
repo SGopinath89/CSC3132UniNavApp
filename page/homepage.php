@@ -90,6 +90,7 @@
        
         .ex2{
             position: absolute;
+            z-index: 1;
         }
         #big {
             position: absolute;

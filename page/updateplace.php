@@ -2,6 +2,17 @@
  require_once'connection/sqlconnect.php';
  require_once'connection/function.php';
 ?>
+<?php
+
+$id=$_GET['id'];
+$mrl=$_GET['mar_l'];
+$mrt=$_GET['mar_t'];
+$des=$_GET['desc'];
+// $query="DELETE FROM Addimage where id='$id'";
+// mysqli_query($connection,$query);
+// header('location:showtable.php');
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,22 +62,23 @@
 	<table align="center">
 		<tr>
 			<td>ID:</td>
-			<td><input type="number" name="id" id="size"></td>
+			<td><input type="number" name="id" id="size" value=<?php echo $id ?>></td>
 			<td><?php
 			          $e1=emptycheck('id','please provide the  Id');
 				?></td>
 		</tr>
 		<tr>
 			<td>MAR_left:</td>
-			<td><input type="text"  name="mar_l" id="size"></td>
+			<td><input type="text"  name="mar_l" id="size" value=<?php echo $mrl ?>></td>
 		</tr>
 		<tr>
 			<td>MAR_top:</td>
-			<td><input type="text"  name="mar_t" id="size"></td>
+			<td><input type="text"  name="mar_t" id="size" value=<?php echo $mrt ?>></td>
 		</tr>
 		 <tr>
 			<td>DISCRIPTION:</td>
-			<td><textarea type="text" rows="10%" cols="50%" name="description"></textarea></td>
+			<td><textarea type="text" rows="10%" cols="50%" name="description" value=><?php echo $des ?>
+		</textarea></td>
 		</tr>
 		<tr>
 			

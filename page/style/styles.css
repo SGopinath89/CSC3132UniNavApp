@@ -63,3 +63,32 @@ a{
     border-radius: 20px;
     background-color: rgba(2,0,0,0.2);
 }
+
+#del{
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: rgb(202, 122, 122);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+}
+#del:hover{
+    background-color: #d83713;
+}
+#upd{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(122, 202, 127);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+#upd:hover{
+background-color: #13d82a;
+}
+#pri{
+    display: inline-flexbox;
+    border-radius: 5px;
+    background-color: rgb(169, 232, 192);
+
+}
