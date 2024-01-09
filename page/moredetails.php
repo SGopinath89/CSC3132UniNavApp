@@ -4,6 +4,7 @@ require_once'connection/sqlconnect.php';
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style/styles.css">
 <style>
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
@@ -15,7 +16,9 @@ img {vertical-align: middle;}
 
   max-width: 1000px;
   position: relative;
-  margin:;
+  margin:0 auto;
+  display: flex;
+  
 }
 
 .prev, .next {
@@ -98,7 +101,8 @@ img {vertical-align: middle;}
 </style>
 </head>
 <body>
-
+    <?php include "header/header.php"?>
+    <?php include "header/navpanel1.php"?>
 <div class="slideshow-container">
   <?php
   if(isset($_GET['val'])){
