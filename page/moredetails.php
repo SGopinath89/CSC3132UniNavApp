@@ -120,31 +120,31 @@ img {vertical-align: middle;}
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>1 / 5</div>";
-  echo"<img src='resource/bimg/$im_1.jpg' style='width:1000px; height:600px' >";
+  echo"<img src='resource/bimg/$im_1' style='width:1000px; height:600px' >";
   echo"<div class='text'>Caption one</div>";
 echo"</div>";
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>2 / 5</div>";
-  echo"<img src='resource/bimg/$im_2.jpg' style='width:1000px; height:600px'>";
+  echo"<img src='resource/bimg/$im_2' style='width:1000px; height:600px'>";
   echo"<div class='text'>Caption Two</div>";
 echo"</div>";
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>3 / 5</div>";
-  echo"<img src='resource/bimg/$im_3.jpg' style='width:1000px; height:600px'>";
+  echo"<img src='resource/bimg/$im_3' style='width:1000px; height:600px'>";
   echo"<div class='text'>Caption Three</div>";
 echo"</div>";
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>4 / 5</div>";
-  echo"<img src='resource/bimg/$im_4.jpg' style='width:1000px; height:600px'>";
+  echo"<img src='resource/bimg/$im_4' style='width:1000px; height:600px'>";
   echo"<div class='text'>Caption four</div>";
 echo"</div>";
 
 echo"<div class='mySlides fade'>";
   echo"<div class='numbertext'>5 / 5</div>";
-  echo"<img src='resource/bimg/$im_5.jpg' style='width:1000px; height:600px'>";
+  echo"<img src='resource/bimg/$im_5' style='width:1000px; height:600px'>";
   echo"<div class='text'>Caption five</div>";
 echo"</div>";
 echo"<a class='prev' onclick='plusSlides(-1)'>❮</a>";
