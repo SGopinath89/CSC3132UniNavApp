@@ -121,7 +121,7 @@ echo "Coodinates($x,$y)";
 		</tr>
 		<tr>
 			<td>IMAGE_1:</td>
-			<td><input type="text"  name="img_1" id="size"></td>
+			<td><input type="file"  name="img_1" id="size"></td>
 			<td id="length"><?php  
 			          $e6=emptycheck('img_1','please provide the img_1');
 
@@ -129,7 +129,7 @@ echo "Coodinates($x,$y)";
 		</tr>
 		<tr>
 			<td>IMAGE_2:</td>
-			<td><input type="text"  name="img_2" id="size"></td>
+			<td><input type="file"  name="img_2" id="size"></td>
 			<td id="length"><?php  
 			          $e7=emptycheck('img_2','please provide the img_2');
 
@@ -137,7 +137,7 @@ echo "Coodinates($x,$y)";
 		</tr>
 		<tr>
 			<td>IMAGE_3:</td>
-			<td><input type="text"  name="img_3" id="size"></td>
+			<td><input type="file"  name="img_3" id="size"></td>
 			<td id="length"><?php  
 			          $e8=emptycheck('img_3','please provide the img_3');
 
@@ -145,7 +145,7 @@ echo "Coodinates($x,$y)";
 		</tr>
 		<tr>
 			<td>IMAGE_4:</td>
-			<td><input type="text"  name="img_4" id="size"></td>
+			<td><input type="file"  name="img_4" id="size"></td>
 			<td id="length"><?php  
 			          $e9=emptycheck('img_4','please provide the img_4');
 
@@ -153,7 +153,7 @@ echo "Coodinates($x,$y)";
 		</tr>
 		<tr>
 			<td>IMAGE_5:</td>
-			<td><input type="text"  name="img_5" id="size"></td>
+			<td><input type="file"  name="img_5" id="size"></td>
 			<td id="length"><?php  
 			          $e10=emptycheck('img_5','please provide the img_5');
 
