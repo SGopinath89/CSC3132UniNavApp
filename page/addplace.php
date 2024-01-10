@@ -60,7 +60,9 @@ echo "Coodinates($x,$y)";
             position: fixed;
             width: 250px;
             height: 20px;
-            margin-top: -4px
+            margin-top: -4px;
+			color: red;
+
         }
 	</style>
 </head>

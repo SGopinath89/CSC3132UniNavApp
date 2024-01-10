@@ -52,6 +52,9 @@ $des=$_GET['desc'];
             height: 20px;
             margin-top: -17px
         }
+		.color{
+			color: red;
+		}
 		
 	</style>
 </head>
@@ -63,7 +66,7 @@ $des=$_GET['desc'];
 		<tr>
 			<td>ID:</td>
 			<td><input type="number" name="id" id="size" value=<?php echo $id ?>></td>
-			<td><?php
+			<td id="color"><?php
 			          $e1=emptycheck('id','please provide the  Id');
 				?></td>
 		</tr>

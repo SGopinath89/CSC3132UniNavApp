@@ -68,7 +68,8 @@ require_once'connection/function.php';
             position: fixed;
             width: 250px;
             height: 20px;
-            margin-top: -17px
+            margin-top: -17px;
+            color: red; 
         }
         .button-link {
             display: inline-block;
@@ -114,7 +115,7 @@ require_once'connection/function.php';
 	
 	<tr>
 		<td><b>Password:</b></td>
-		<td><input type="text" name="createpwd" id='inpt'></td>
+		<td><input type="password" name="createpwd" id='inpt'></td>
         <td id="length" colspan=2><?php 
              $e2 = emptycheck('createpwd','please provide the password!!'); 
              ?></td>
