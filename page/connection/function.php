@@ -44,7 +44,7 @@ function updatetable($conn,$query)
 		}
 
 }
-function deletecor()
+function deletecor($conn)
 {
 	$query="DELETE FROM cor";
 	mysqli_query($conn,$query);
@@ -187,9 +187,9 @@ function utable($result)
 		echo"<table border=1px cellspacing=0px align='center' id='pri' align='center'>";
 		echo"<tr>";
 		echo "<td>ID  </td>";
-		echo "<td>heading </td>";
-		echo "<td>margin_left</td>";
-		echo "<td>margin_top </td>";
+		echo "<td>margin_left </td>";
+		echo "<td>margin_top</td>";
+		echo "<td>discription </td>";
 		echo "<td>update</td>";
     	echo "</tr>";
 		
