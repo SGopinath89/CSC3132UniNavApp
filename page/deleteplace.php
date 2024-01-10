@@ -35,7 +35,7 @@ require_once'connection/function.php';
 			height: 30px;
 		}
 		#length{
-            position: fixed;
+            position: absolute;
             width: 250px;
             height: 20px;
             margin-top: -17px
