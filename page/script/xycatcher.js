@@ -10,15 +10,8 @@ function handleClick(event) {
     var percentageY = (offsetY / containerRect.height) * 98;
     var y=((percentageY/100)*69.230);
 
-    console.log('Percentage Coordinates - X:', percentageX.toFixed(2), 'Y:', y.toFixed(2));
-  
-}
-function showCoords(event) {
-    let x = event.clientX;
-    let y = event.clientY;
-    
-    let x_l=x-237;
-    let y_t=y-237;
+    let x_l=percentageX.toFixed(2);
+    let y_t=y.toFixed(2);
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {

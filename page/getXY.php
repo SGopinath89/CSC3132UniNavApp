@@ -23,17 +23,40 @@ mysqli_query($connection,$query);
           background-position: center;
           background-size: cover;
         }
+        #output {
+      position: absolute;
+      top: 10vh;
+      left: 70vw;
+      color: black;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 5px;
+    }
     </style>
 </head>
 <body >
-<a href="dashboard.php?content=addplace.php">
-  <div onclick="handleClick(event)" style="border:1px solid black;padding:4px">
-    <div class="sticky" id='im'>
-    <img src="resource/uovmap.jpg" id="im">
+<a href="dashboard.php?content=addplace.php"><a>
+  <div id="container" onclick="handleClick(event)">
    
-    </div>
-  </script>
+    <img src="resource/uovmap.jpg" id="im">
+    <div id="output"></div>
   </div>
+  <script>
+  function handleClick(event) {
+    var container = document.getElementById('container');
+    var image = document.getElementById('im');
+    var output = document.getElementById('output');
 
+    var containerRect = container.getBoundingClientRect();
+    var offsetX = event.clientX - containerRect.left - 10;
+    var offsetY = event.clientY - containerRect.top - 10;
+
+    var percentageX = (offsetX / containerRect.width) * 98;
+    var percentageY = (offsetY / containerRect.height) * 98;
+    var y = ((percentageY / 100) * 69.230);
+
+    // Display coordinates in the output div
+    output.innerHTML = 'Percentage Coordinates - X: ' + percentageX.toFixed(2) + ' Y: ' + y.toFixed(2);
+  }
+</script>
 </body>
 </html>
