@@ -27,7 +27,7 @@ mysqli_query($connection,$query);
 </head>
 <body >
 <a href="dashboard.php?content=addplace.php">
-  <div onclick="showCoords(event)" style="border:1px solid black;padding:4px">
+  <div onclick="handleClick(event)" style="border:1px solid black;padding:4px">
     <div class="sticky" id='im'>
     <img src="resource/uovmap.jpg" id="im">
     <p id="demo">Coordinates:</p>
