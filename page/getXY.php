@@ -34,29 +34,37 @@ mysqli_query($connection,$query);
     </style>
 </head>
 <body >
-<a href="dashboard.php?content=addplace.php"><a>
+<a href="dashboard.php?content=addplace.php">
   <div id="container" onclick="handleClick(event)">
    
-    <img src="resource/uovmap.jpg" id="im">
+    <img src="resource/uovmap.jpg" id="im"></a>
     <div id="output"></div>
   </div>
   <script>
   function handleClick(event) {
     var container = document.getElementById('container');
-    var image = document.getElementById('im');
-    var output = document.getElementById('output');
+    var image = document.getElementById('image');
 
     var containerRect = container.getBoundingClientRect();
-    var offsetX = event.clientX - containerRect.left - 10;
-    var offsetY = event.clientY - containerRect.top - 10;
 
-    var percentageX = (offsetX / containerRect.width) * 98;
-    var percentageY = (offsetY / containerRect.height) * 98;
-    var y = ((percentageY / 100) * 69.230);
+    let x = event.clientX-containerRect.left-10;
+    let y = event.clientY-containerRect.top-10;
+    
+    let x_l=(x / containerRect.width) * 98;
+    let y_t=(y / containerRect.height/100) * 98*69.230;
+    
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            // Display the PHP response (if any)
+            document.getElementById("result").innerHTML = this.responseText;
+        }
+    };
 
-    // Display coordinates in the output div
-    output.innerHTML = 'Percentage Coordinates - X: ' + percentageX.toFixed(2) + ' Y: ' + y.toFixed(2);
-  }
+    xhttp.open("POST", "addplace.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("x=" + (x_l.toFixed(2)) + "&y=" + (y_t.toFixed(2)));
+}
 </script>
 </body>
 </html>
