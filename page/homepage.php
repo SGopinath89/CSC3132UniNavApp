@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style/styles.css">
     <style type="text/css">
         #im{
-            width: 850px;
-            height: 650px;
+            width: 100%;
+            height: auto;
         } 
         .frame {
             width: 200px;
@@ -191,13 +191,12 @@ for ($i = 1; $i <= $count; $i++) {
         $he=$value['heading'];
         $icon=$value['mar_t'];
         $l=$m_l;
-       
-        $ic=$m_l;
-
+        $t=$m_t-2.5;
+        $ic=$m_l+3;
     
     echo "<img src='resource/bicon/$loc.png' style='margin-left: {$m_l}vw; margin-top: {$m_t}vw; padding: 0px' id='a{$i}' class='a1'>";
-   // echo "<img src='resource/LocationIcon.png' style='margin-left: {$l}vw; margin-top: {$icon}px; padding: 0px height: 40px; width: 40px' class='ex2' id='ico{$i}'>";
-   // echo"<div  id='big' style='margin-left: {$ic}vw; margin-top: {$icon}vw;'><h4 class='typed-text'>$he</h4></div>";
+    echo "<img src='resource/LocationIcon.png' style='margin-left: {$l}vw; margin-top: {$t}vw; padding: 0px height: 40px; width: 40px' class='ex2' id='ico{$i}'>";
+    echo"<div  id='big' style='margin-left: {$ic}vw; margin-top: {$t}vw;'><h4 class='typed-text'>$he</h4></div>";
     
     
   

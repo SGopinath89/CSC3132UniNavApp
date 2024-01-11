@@ -69,7 +69,7 @@ echo "Coodinates($x,$y)";
 <body>
 <div>
 <form method="POST">
-	<table border=2>
+	<table>
 		<tr>
 			<td>ID: </td>
 			<td><input type="number"  name="id" id="size"></td>

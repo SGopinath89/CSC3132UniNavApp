@@ -18,8 +18,8 @@ mysqli_query($connection,$query);
             font-size: 30px;
         }
         #im{
-          width: 850px;
-          height: 650px;
+          width: 100%;
+          height: auto;
           background-position: center;
           background-size: cover;
         }
@@ -30,14 +30,10 @@ mysqli_query($connection,$query);
   <div onclick="handleClick(event)" style="border:1px solid black;padding:4px">
     <div class="sticky" id='im'>
     <img src="resource/uovmap.jpg" id="im">
-    <p id="demo">Coordinates:</p>
+   
     </div>
-     <script src="script/xycatcher.js">
   </script>
   </div>
-  
-  <div id="result"></div>
- </a>
 
 </body>
 </html>
