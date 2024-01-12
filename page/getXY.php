@@ -34,7 +34,7 @@ mysqli_query($connection,$query);
     </style>
 </head>
 <body >
-<!-- <a href="dashboard.php?content=addplace.php"> -->
+<a href="dashboard.php?content=addplace.php">
   <div id="container" onclick="handleClick(event)">
    
     <img src="resource/uovmap.jpg" id="im"></a>
@@ -55,8 +55,8 @@ mysqli_query($connection,$query);
     let y_t=((y / containerRect.height/100) * 98*69.230).toFixed(2);
     output.innerHTML = 'Percentage Coordinates - X: ' + (x_l) + ' Y: ' + (y_t);
     
-    x_l=parseFloat(x_l);
-    y_t=parseFloat(y_t);
+    x_l1=parseFloat(x_l);
+    y_t1=parseFloat(y_t);
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -69,9 +69,10 @@ mysqli_query($connection,$query);
     xhttp.open("POST", "addplace.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     // xhttp.send("x=" + encodeURIComponent(x_l) + "&y=" + encodeURIComponent(y_t));
-    xhttp.send("x=" + x.toString() + "&y=" + y.toString());
+    xhttp.send("x=" + x_l1.toString() + "&y=" + y_t1.toString());
     document.getElementById('container').addEventListener('click', handleClick);
 }
 </script>
+</a>
 </body>
 </html>
