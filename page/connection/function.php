@@ -4,9 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="style/styles.css">
-	<style>
 	
+	<style>
+		.a1{
+            height: 30px;
+            width: 30px;
+            margin-left: 200px;
+            margin-top: 200px;
+        }
 	</style>
 </head>
 <body>
@@ -230,7 +235,65 @@ function utable($result)
       }
 
 }
-?>	
+function locpointer($connection){
+	require_once'connection/sqlconnect.php';
+	$query1="SELECT * FROM Addimage";
+	$result1=mysqli_query($connection,$query1);
+	$count=mysqli_num_rows($result1);
+	for ($i = 1; $i <= $count; $i++) {
+		$query="SELECT * FROM Addimage WHERE id='$i'";
+		$result=mysqli_query($connection,$query);
+		foreach ($result as $key => $value) {
+			$m_l=$value['mar_l'];
+			$m_t=$value['mar_t'];
+			$loc=$value['b_img'];
+			$he=$value['heading'];
+			$icon=$value['mar_t'];
+			$l=$m_l;
+			$t=$m_t-2.5;
+			$ic=$m_l+3;
+		
+		echo "<img src='resource/bicon/$loc.png' style='margin-left: {$m_l}vw; margin-top: {$m_t}vw; padding: 0px;' id='a{$i}' class='a1'>";
+		echo "<img src='resource/LocationIcon.png' style='margin-left: {$l}vw; margin-top: {$t}vw; padding: 0px; height: 40px; width: 40px' class='ex2' id='ico{$i}'>";
+		echo "<div  id='big' style='margin-left: {$ic}vw; margin-top: {$t}vw;'><h4 class='typed-text'>$he</h4></div>";
+		}
+	}
+}
+function moredetailbox($connection)
+{
+	for($j=1; $j<=$count; $j++)
+	{
+    $query3="SELECT * FROM Addimage WHERE id='$j'";
+    $result3=mysqli_query($connection,$query3);
+    foreach ($result3 as $key => $value)
+    {
+        $im_1=$value['img_1'];
+        $im_2=$value['img_2'];
+        $im_3=$value['img_3'];
+        $m_l=$value['mar_l']+20;
+        $m_t=$value['mar_t'];
+        $hed=$value['heading'];
+        $ID=$value['id'];
+        $dis=$value['description'];
+        $sorttext=substr($dis, 0, 100);
+        
+   echo"<div>";
+        echo"<div class='frame' id='div{$j}' style='margin-left: {$m_l}vw; margin-top: {$m_t}vw;'>";
+           echo"<img src='resource/Close.png' id='c{$j}' class='siz'>";
+           echo"<h2>$hed</h2>";
+           echo"<img src='resource/bimg/$im_1' id='s_size'>";
+           echo"<img src='resource/bimg/$im_2' id='s_size'>";
+           echo"<img src='resource/bimg/$im_3' id='s_size'>";
+           echo "<b>discreption:</b><br>";
+           echo"<p>$sorttext</p>";
+           echo "<a href='moredetails.php?val=" . urlencode($ID) . "' id='more'>view more</a>";
+           
+        echo"</div>";
+   echo"</div>";
+    }
+ }
+}
+?>
 </body>
 </html>
 
