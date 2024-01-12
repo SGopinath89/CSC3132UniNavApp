@@ -176,7 +176,7 @@
              <img src="resource/uovmap.jpg" id="im">
 
   <!-- <img src="resource/uovmap.jpg" alt="Image 1" id="im"> -->
-    <?php
+<?php
 require_once'connection/sqlconnect.php';
 $query1="SELECT * FROM Addimage";
 $result1=mysqli_query($connection,$query1);
@@ -197,9 +197,6 @@ for ($i = 1; $i <= $count; $i++) {
     echo "<img src='resource/bicon/$loc.png' style='margin-left: {$m_l}vw; margin-top: {$m_t}vw; padding: 0px' id='a{$i}' class='a1'>";
     echo "<img src='resource/LocationIcon.png' style='margin-left: {$l}vw; margin-top: {$t}vw; padding: 0px height: 40px; width: 40px' class='ex2' id='ico{$i}'>";
     echo"<div  id='big' style='margin-left: {$ic}vw; margin-top: {$t}vw;'><h4 class='typed-text'>$he</h4></div>";
-    
-    
-  
   }
 }
 ?>
