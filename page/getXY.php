@@ -34,7 +34,7 @@ mysqli_query($connection,$query);
     </style>
 </head>
 <body >
-<a href="dashboard.php?content=addplace.php">
+<!-- <a href="dashboard.php?content=addplace.php"> -->
   <div id="container" onclick="handleClick(event)">
    
     <img src="resource/uovmap.jpg" id="im"></a>
@@ -44,15 +44,20 @@ mysqli_query($connection,$query);
   function handleClick(event) {
     var container = document.getElementById('container');
     var image = document.getElementById('image');
+    var output = document.getElementById('output');
 
     var containerRect = container.getBoundingClientRect();
 
     let x = event.clientX-containerRect.left-10;
     let y = event.clientY-containerRect.top-10;
     
-    let x_l=(x / containerRect.width) * 98;
-    let y_t=(y / containerRect.height/100) * 98*69.230;
+    let x_l=((x / containerRect.width) * 98).toFixed(2);
+    let y_t=((y / containerRect.height/100) * 98*69.230).toFixed(2);
+    output.innerHTML = 'Percentage Coordinates - X: ' + (x_l) + ' Y: ' + (y_t);
     
+    x_l=parseFloat(x_l);
+    y_t=parseFloat(y_t);
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -60,10 +65,12 @@ mysqli_query($connection,$query);
             document.getElementById("result").innerHTML = this.responseText;
         }
     };
-
+    
     xhttp.open("POST", "addplace.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("x=" + (x_l.toFixed(2)) + "&y=" + (y_t.toFixed(2)));
+    // xhttp.send("x=" + encodeURIComponent(x_l) + "&y=" + encodeURIComponent(y_t));
+    xhttp.send("x=" + x.toString() + "&y=" + y.toString());
+    document.getElementById('container').addEventListener('click', handleClick);
 }
 </script>
 </body>

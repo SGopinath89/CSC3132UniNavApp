@@ -6,8 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve the values of x and y sent from JavaScript
     // $x = $_POST["x"];
     // $y = $_POST["y"];
-	$x = isset($_POST["x"]) ? $_POST["x"] : null;
-    $y = isset($_POST["y"]) ? $_POST["y"] : null;
+	$x = isset($_POST["x"]) ? ($_POST["x"]) : null;
+    $y = isset($_POST["y"]) ? ($_POST["y"]) : null;
+	
+	// $x = is_numeric($x) ? (float)$x : null;
+    // $y = is_numeric($y) ? (float)$y : null;
+	$x = filter_var($x, FILTER_VALIDATE_FLOAT);
+    $y = filter_var($y, FILTER_VALIDATE_FLOAT);
 
 // Prepare and execute the SQL query to insert values into the database
 $sql = "INSERT INTO cor (x, y) VALUES ('$x','$y')";
