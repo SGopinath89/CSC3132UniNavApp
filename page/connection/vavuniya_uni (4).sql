@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2024 at 12:32 PM
+-- Generation Time: Jan 12, 2024 at 02:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -119,8 +119,8 @@ INSERT INTO `buildingicon` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `cor` (
-  `x` int(11) NOT NULL,
-  `y` int(11) NOT NULL
+  `x` decimal(10,3) DEFAULT NULL,
+  `y` decimal(10,3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -128,12 +128,7 @@ CREATE TABLE `cor` (
 --
 
 INSERT INTO `cor` (`x`, `y`) VALUES
-(0, 0),
-(0, 0),
-(0, 0),
-(0, 0),
-(0, 0),
-(0, 0);
+(52.030, 10.470);
 
 -- --------------------------------------------------------
 
