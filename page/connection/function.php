@@ -134,7 +134,7 @@ function login($name,$pwd,$keplog,$conn)
 	   
 }
 	else{
-		echo"loginfailed please check your username or password";
+		echo"<center><b>login failed please check your username or password</b></center>";
 	}
 
 

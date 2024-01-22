@@ -15,7 +15,7 @@ require_once'connection/function.php';
         }
 		.div1{
             margin-top: 110px;
-			height: 400px;
+			height: 450px;
 			width: 380px;
 			position: absolute;
 			top: 50%;

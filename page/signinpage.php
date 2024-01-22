@@ -51,7 +51,18 @@
             height: 20px;
             margin-top: -17px
         }
-
+		.button-link {
+            display: inline-block;
+            padding:1em 2em 2em 2em;
+            background-color: #3C6255;
+            color: #fff;
+            text-decoration: none;
+			font-size:1em;
+            border-radius: 5px;
+        }
+        .button-link:hover {
+            background-color: #03C988;
+        }
 
 	</style>
 </head>
@@ -103,8 +114,8 @@
 	
 
 	<tr>
-		<td>
-		<input type="submit" name="Adddetail" value="Signin" class="cent" >
+		<td colspan="3" align="center">
+		<input type="submit" name="Adddetail" value="Signin" class="button-link" >
 	</td>
 	</tr>
 </table>
