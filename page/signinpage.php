@@ -49,7 +49,8 @@
             position: fixed;
             width: 250px;
             height: 20px;
-            margin-top: -17px
+            margin-top: -17px;
+			color: red;
         }
 		.button-link {
             display: inline-block;
@@ -86,7 +87,7 @@
 		<td><input type="text" name="id"></td>
 		<td id="length"><?php 
 		         $d1=duplicateId('id',$connection);
-		         $e1=emptycheck('Uname','please provide the user ID!!');
+		         $e1=emptycheck('id','please provide the user ID!!');
 		     ?></td>
 	</tr>
 	
@@ -94,21 +95,21 @@
 		<td><b>Email    :</b></td>
 		<td><input type="text" name="email"></td>
 		<td id="length"><?php 
-		             $e3=emptycheck('Uname','please provide the email!!');
+		             $e3=emptycheck('email','please provide the email!!');
 		        ?></td>
 	</tr>
 	<tr>
 		<td><b>Create Password:</b></td>
 		<td><input type="text" name="createpwd"></td>
 		<td id="length"><?php 
-		           $e4=emptycheck('Uname','please provide the password!!');
+		           $e4=emptycheck('createpwd','please provide the password!!');
 		        ?></td>
 	</tr>
 	<tr>
 		<td><b>Confirm Password:</b></td>
 		<td><input type="text" name="confirmpwd"></td>
 		<td id="length"><?php 
-		           $e5=emptycheck('Uname','please provide the password!!');
+		           $e5=emptycheck('confirmpwd','please provide the password!!');
 		     ?></td>
 	</tr>
 	

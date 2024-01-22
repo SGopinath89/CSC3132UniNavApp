@@ -215,7 +215,7 @@ for($j=1; $j<=$count; $j++)
         $im_1=$value['img_1'];
         $im_2=$value['img_2'];
         $im_3=$value['img_3'];
-        $m_l=$value['mar_l']+20;
+        $m_l=$value['mar_l']+3;
         $m_t=$value['mar_t'];
         $hed=$value['heading'];
         $ID=$value['id'];
